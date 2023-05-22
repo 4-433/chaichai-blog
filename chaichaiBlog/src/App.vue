@@ -1,57 +1,68 @@
 <!--
  * @Author: fengyuanyao fengyuanyao@fanyu.com
  * @Date: 2023-05-22 15:10:09
- * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2023-05-22 18:10:32
- * @FilePath: \chaiv3\chaichaiBlog\src\App.vue
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-05-22 23:22:12
+ * @FilePath: \chaichaiblog\chaichaiBlog\src\App.vue
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
 -->
 <template>
-  <div  class="main-box">
+  <div class="main-box">
     <div>
-      <div class="title-text" :style="{'color': color}">wellcome to chaichai.top</div>
-      <div class="change-them" :style="{'color': color}">
-        color Them:  
-        <div class="them-box" style="cursor:point">
-            <span class="them-item" v-for="(item,index) in themList" :key="index" :style="{'background':item}" :class="{isActive: item === activeColor}" @click="changeThem(item)"></span>
+      <div class="title-text" :style="{ color: color }">
+        wellcome to chaichai.top
+      </div>
+      <div class="change-them" :style="{ color: color }">
+        color palette:
+        <div class="them-box" style="cursor: point">
+          <span
+            class="them-item"
+            v-for="(item, index) in themList"
+            :key="index"
+            :style="{ background: item }"
+            :class="{ isActive: item === activeColor }"
+            @click="changeThem(item)"
+          ></span>
+        </div>
       </div>
     </div>
+    <div class="border-box" :class="color" :style="{ 'border-color': color }">
+      <RouterView />
     </div>
-    <div class="border-box" :class="color" :style="{'border-color': color}">
-    <RouterView />
-    </div>
-    <div class="mouse-box" :style="{'background-color':color}"></div>
-    <div class="mouse-border" :style="{'border-color': color}"></div>
+    <div class="mouse-box" :style="{ 'background-color': color }"></div>
+    <div class="mouse-border" :style="{ 'border-color': color }"></div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-const color = ref('#cea54f')
-const activeColor = ref('#cea54f')
-const themList = ref(['#cea54f','#697f9a','#4b9674','#90a085','#99a6a1','#272624'])
-document.onmousemove=function(e){
-var div=document.querySelector('.mouse-box')
-var div2=document.querySelector('.mouse-border')
-    var x=e.clientX
-    var y=e.clientY
-    div.style.display = 'block'
-    div2.style.display = 'block'
-    div.style.left=x-4+'px'
-    div.style.top=y-4+'px'
-    div2.style.left=x-24+'px'
-    div2.style.top=y-24+'px'
-}
+import { useCounterStore } from "@/stores/index.ts";
+import { storeToRefs } from "pinia";
+const counter = useCounterStore();
+let { themList, color, activeColor } = storeToRefs(counter);
+// let color = storeToRefs(counter);
+// let activeColor = storeToRefs(counter);
+
+// const color = ref("#cea54f");
+// const activeColor = ref("#cea54f");
+
+document.onmousemove = function (e) {
+  var div = document.querySelector(".mouse-box");
+  var div2 = document.querySelector(".mouse-border");
+  var x = e.clientX;
+  var y = e.clientY;
+  div.style.display = "block";
+  div2.style.display = "block";
+  div.style.left = x - 4 + "px";
+  div.style.top = y - 4 + "px";
+  div2.style.left = x - 24 + "px";
+  div2.style.top = y - 24 + "px";
+};
 
 const changeThem = (item) => {
-  activeColor.value = item
-  color.value = item
-  console.log(activeColor.value);
-  console.log(item);
-  
-  
-}
+  activeColor.value = item;
+  color.value = item;
+};
 </script>
 
 
@@ -65,10 +76,10 @@ const changeThem = (item) => {
   position: absolute;
   width: 100vw;
   min-height: 100vh;
-  background: url('@/assets/bgTexture.webp');
+  background: url("@/assets/bgTexture.webp");
   overflow: hidden;
 }
-.change-them{
+.change-them {
   position: fixed;
   /* top: 10px; */
   right: 20px;
@@ -76,10 +87,10 @@ const changeThem = (item) => {
   flex-wrap: nowrap;
   font-size: 10px;
   border: none !important;
-    font-weight: 700;
+  font-weight: 700;
   font-style: italic;
-    text-align: center;
-    letter-spacing: .015em;
+  text-align: center;
+  letter-spacing: 0.015em;
 }
 .title-text {
   position: fixed;
@@ -88,25 +99,27 @@ const changeThem = (item) => {
   /* font-family: serif; */
   font-weight: 700;
   font-style: italic;
-    text-align: center;
-    letter-spacing: .015em;
+  text-align: center;
+  letter-spacing: 0.015em;
 }
-.them-box{
+.them-box {
   width: 80px;
   display: flex;
   justify-content: space-between;
   margin-left: 10px;
   margin-top: 6px;
 }
-.them-box span{
+.them-box span {
   width: 8px;
   height: 8px;
   cursor: pointer;
 }
 .isActive {
-  height: 16px!important;
+  height: 16px !important;
 }
-.border-box{
+.border-box {
+  overflow-y: auto;
+  overflow-x: hidden;
   position: fixed;
   top: 20px;
   right: 20px;
@@ -114,19 +127,22 @@ const changeThem = (item) => {
   bottom: 20px;
   border: 2px solid;
 }
-.blue{
+.border-box::-webkit-scrollbar {
+  display: none !important;
+}
+.blue {
   border: 2px solid #697f9a;
 }
-.yellow{
+.yellow {
   border: 2px solid #cea54f;
 }
-.isYellow{
+.isYellow {
   color: #cea54f;
 }
-.isBlue{
+.isBlue {
   color: #697f9a;
 }
-.mouse-box{
+.mouse-box {
   pointer-events: none;
   display: none;
   width: 10px;
@@ -136,17 +152,17 @@ const changeThem = (item) => {
   top: 0;
   left: 0;
 }
-.mouse-border{
+.mouse-border {
   pointer-events: none;
   display: none;
   width: 50px;
   height: 50px;
-  border:3px solid;
+  border: 3px solid;
   border-radius: 50%;
   position: fixed;
   top: 0;
   left: 0;
-  transition: all .2s;
+  transition: all 0.4s;
   transition-timing-function: ease-out;
 }
 </style>
