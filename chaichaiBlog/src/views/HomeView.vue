@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-05-23 21:54:29
+ * @LastEditTime: 2023-05-23 23:54:55
  * @FilePath: \chaichaiblog\chaichaiBlog\src\views\HomeView.vue
  * @Description: 
  * 
@@ -92,6 +92,8 @@
           <span style="font-size: 8rem" class="text-focus-inS">power by</span>
           <span class="text-focus-inT">Chai chai</span>
         </div>
+        <div class="jxw-text">这是我们的吉祥物！↓</div>
+        <div class="jxw-box"><img src="@/assets/jxw.png" alt="" /></div>
       </div>
     </div>
     <div class="split-box">
@@ -277,9 +279,10 @@ let { color } = storeToRefs(counter);
 
 .content-box {
   /* width: 100%; */
-  height: 895px;
+  height: 896px;
   display: flex;
   flex-wrap: nowrap;
+  position: relative;
 }
 
 .content-tbox {
@@ -299,6 +302,23 @@ let { color } = storeToRefs(counter);
   flex: 87;
   border-bottom: 2px solid;
 }
+.jxw-box {
+  width: 200px;
+  position: absolute;
+  right: 25%;
+  bottom: 63%;
+  /* right: 0; */
+}
+.jxw-text {
+  position: absolute;
+  right: 5%;
+  bottom: 55%;
+  font-size: 40px;
+  font-weight: 700;
+}
+.jxw-box img {
+  width: 1000px;
+}
 
 .cbox-content {
   font-size: 6rem;
@@ -310,7 +330,7 @@ let { color } = storeToRefs(counter);
 .cbox-content1 {
   font-size: 18rem;
   font-weight: 700;
-  margin-left: 20rem;
+  margin-left: 10rem;
   margin-top: 30px;
 }
 
@@ -413,6 +433,7 @@ let { color } = storeToRefs(counter);
 }
 
 .text-focus-inT {
+  margin-left: 3rem;
   animation: text-focus-in 3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal,
     "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
