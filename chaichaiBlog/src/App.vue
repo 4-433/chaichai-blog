@@ -1,9 +1,9 @@
 <!--
  * @Author: fengyuanyao fengyuanyao@fanyu.com
  * @Date: 2023-05-22 15:10:09
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-05-22 23:22:12
- * @FilePath: \chaichaiblog\chaichaiBlog\src\App.vue
+ * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
+ * @LastEditTime: 2023-05-23 15:51:32
+ * @FilePath: \chaiv3\chaichaiBlog\src\App.vue
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
 -->
@@ -36,19 +36,34 @@
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from "@/stores/index.ts";
+import { useCounterStore } from "@/stores/index";
 import { storeToRefs } from "pinia";
+
+var fun = function (doc: Document, win: Window & typeof globalThis) {
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = 10 * (clientWidth / 1920) + 'px';
+        };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+}
+fun(document, window);
+
 const counter = useCounterStore();
 let { themList, color, activeColor } = storeToRefs(counter);
-// let color = storeToRefs(counter);
-// let activeColor = storeToRefs(counter);
 
-// const color = ref("#cea54f");
-// const activeColor = ref("#cea54f");
-
+/**
+ * @description: 预定效果跟随鼠标移动
+ * @param {*} e
+ * @return {*}
+ */
 document.onmousemove = function (e) {
-  var div = document.querySelector(".mouse-box");
-  var div2 = document.querySelector(".mouse-border");
+  var div = document.querySelector(".mouse-box") as HTMLElement;
+  var div2 = document.querySelector(".mouse-border") as HTMLElement;
   var x = e.clientX;
   var y = e.clientY;
   div.style.display = "block";
@@ -71,6 +86,7 @@ const changeThem = (item) => {
   margin: 0;
   padding: 0;
   user-select: none;
+  box-sizing: border-box;
 }
 .main-box {
   position: absolute;
@@ -78,6 +94,17 @@ const changeThem = (item) => {
   min-height: 100vh;
   background: url("@/assets/bgTexture.webp");
   overflow: hidden;
+}
+body::before {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: url("@/assets/noise.png") 0 0;
+    background-size: 500px 500px;
+    content: "";
+    width: 100%;
+    height: calc(100% + 100px);
+    z-index: 0;
 }
 .change-them {
   position: fixed;

@@ -21,7 +21,6 @@ import App from './App.vue'
 import router from './router'
 // const pinia = createStore()
 
-
 const app = createApp(App)
 
 app.use(createPinia())
