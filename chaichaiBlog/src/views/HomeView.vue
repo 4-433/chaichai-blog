@@ -1,12 +1,14 @@
 <!--
- * @Author: fengyuanyao fengyuanyao@fanyu.com
- * @Date: 2023-05-22 15:10:09
- * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2023-05-23 17:50:37
- * @FilePath: \chaiv3\chaichaiBlog\src\views\HomeView.vue
+ * @Author: Chai chai 2787922490@qq.com
+ * @Date: 2023-05-22 20:51:58
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-05-23 21:54:29
+ * @FilePath: \chaichaiblog\chaichaiBlog\src\views\HomeView.vue
+ * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
 -->
+
 <template>
   <div class="img">
     <div>
@@ -15,17 +17,29 @@
       </span>
     </div>
     <div class="title-box">
-      <div class="title-fbox" :style="{
-        'border-color': color,
-        backgroundImage: `linear-gradient(45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
-        backgroundSize: '40px 40px',
-      }"></div>
+      <div
+        class="title-fbox"
+        :style="{
+          'border-color': color,
+          backgroundImage: `linear-gradient(45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
+          backgroundSize: '40px 40px',
+        }"
+      ></div>
       <div class="title-mbox" :style="{ 'border-color': color, color: color }">
         Sound
         <div class="loader">
-          <div class="outer" :style="{ 'border-top-color': color, 'border-right-color': color }"></div>
-          <div class="middle" :style="{ 'border-top-color': color, 'border-right-color': color }"></div>
-          <div class="inner" :style="{ 'border-top-color': color, 'border-right-color': color }"></div>
+          <div
+            class="outer"
+            :style="{ 'border-top-color': color, 'border-right-color': color }"
+          ></div>
+          <div
+            class="middle"
+            :style="{ 'border-top-color': color, 'border-right-color': color }"
+          ></div>
+          <div
+            class="inner"
+            :style="{ 'border-top-color': color, 'border-right-color': color }"
+          ></div>
         </div>
       </div>
       <div class="title-lbox" :style="{ 'border-color': color, color: color }">
@@ -47,7 +61,10 @@
       </div>
     </div>
     <div class="content-box">
-      <div class="content-tbox" :style="{ 'border-color': color, color: color }">
+      <div
+        class="content-tbox"
+        :style="{ 'border-color': color, color: color }"
+      >
         <div class="tbox-text vibrate-1">
           <p>Chai chai</p>
           <p>优秀的博客模板作者</p>
@@ -66,18 +83,28 @@
           <br />
         </div>
       </div>
-      <div class="content-cbox" :style="{ 'border-color': color, color: color }">
+      <div
+        class="content-cbox"
+        :style="{ 'border-color': color, color: color }"
+      >
         <div class="cbox-content text-focus-in">This is the new one</div>
         <div class="cbox-content1">
-          <span style="font-size: 8rem" class="text-focus-inS">power by</span> <span class="text-focus-inT">Chai
-            chai</span>
+          <span style="font-size: 8rem" class="text-focus-inS">power by</span>
+          <span class="text-focus-inT">Chai chai</span>
         </div>
       </div>
     </div>
     <div class="split-box">
-      <div class="split-lbox" :style="{ 'border-color': color, color: color }">Works</div>
-      <div class="split-rbox"
-        :style="{ 'border-color': color, backgroundImage: `radial-gradient(${color} 40%, transparent 0)` }"></div>
+      <div class="split-lbox" :style="{ 'border-color': color, color: color }">
+        Works
+      </div>
+      <div
+        class="split-rbox"
+        :style="{
+          'border-color': color,
+          backgroundImage: `radial-gradient(${color} 40%, transparent 0)`,
+        }"
+      ></div>
     </div>
     <div class="quil-box">
       <div class="year-box">
@@ -97,18 +124,74 @@
           </div>
           <div class="quil-fbox">2023</div>
         </div>
-        <div class="quil-rbox" :style="{ 'border-color': color, '-webkit-text-stroke': `1px ${color}` }">the qoly</div>
+        <div
+          class="quil-rbox"
+          :style="{
+            'border-color': color,
+            '-webkit-text-stroke': `1px ${color}`,
+          }"
+        >
+          the qoly
+        </div>
       </div>
       <div class="quil-split">
-        <div class="split-Lbox" :style="{
-          'border-color': color,
-          backgroundImage: `linear-gradient(-45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
-          backgroundSize: '20px 20px',
-        }"></div>
+        <div
+          class="split-Lbox"
+          :style="{
+            'border-color': color,
+            backgroundImage: `linear-gradient(-45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
+            backgroundSize: '20px 20px',
+          }"
+        ></div>
         <div class="split-Rbox" :style="{ color: color }">
           <div>view project</div>
           <div class="split-point" :style="{ color: color }">→</div>
         </div>
+      </div>
+    </div>
+    <div class="quil-box1">
+      <div class="year-box1">
+        <div
+          class="quil-rbox1"
+          :style="{
+            'border-color': color,
+            '-webkit-text-stroke': `1px ${color}`,
+          }"
+        >
+          i holder
+        </div>
+        <div
+          class="quil-ybox1"
+          :style="{ 'border-color': color, color: color }"
+        >
+          <div class="quil-fbox1">2022</div>
+          <div class="quil-pbox1">
+            <p>Art Direction</p>
+            <p>Brand Planning</p>
+            <p>Copywriting</p>
+            <p>Graphic Design</p>
+            <p>Logo Design</p>
+            <p>Motion Direction</p>
+            <p>Photo Direction</p>
+            <p>Sign Design</p>
+            <p>Space Produce</p>
+            <p>Web Design</p>
+            <p>Web Planning</p>
+          </div>
+        </div>
+      </div>
+      <div class="quil-split1">
+        <div class="split-Rbox1" :style="{ color: color }">
+          <div>view project</div>
+          <div class="split-point1" :style="{ color: color }">→</div>
+        </div>
+        <div
+          class="split-Lbox1"
+          :style="{
+            'border-color': color,
+            backgroundImage: `radial-gradient(${color} 40%, transparent 0)`,
+          }"
+        ></div>
       </div>
     </div>
   </div>
@@ -119,7 +202,6 @@ import { useCounterStore } from "@/stores/index.ts";
 import { storeToRefs } from "pinia";
 const counter = useCounterStore();
 let { color } = storeToRefs(counter);
-
 </script>
 
 <style scoped>
@@ -288,7 +370,7 @@ let { color } = storeToRefs(counter);
   margin: 20px auto;
 }
 
-.dots>div {
+.dots > div {
   width: 0.5em;
   height: 0.5em;
 
@@ -296,23 +378,23 @@ let { color } = storeToRefs(counter);
   animation: fade 1.5s alternate ease-in-out infinite;
 }
 
-.dots>div:nth-of-type(2),
-.dots>div:nth-of-type(4) {
+.dots > div:nth-of-type(2),
+.dots > div:nth-of-type(4) {
   animation-delay: 0.25s;
 }
 
-.dots>div:nth-of-type(3),
-.dots>div:nth-of-type(5),
-.dots>div:nth-of-type(7) {
+.dots > div:nth-of-type(3),
+.dots > div:nth-of-type(5),
+.dots > div:nth-of-type(7) {
   animation-delay: 0.5s;
 }
 
-.dots>div:nth-of-type(6),
-.dots>div:nth-of-type(8) {
+.dots > div:nth-of-type(6),
+.dots > div:nth-of-type(8) {
   animation-delay: 0.75s;
 }
 
-.dots>div:nth-of-type(9) {
+.dots > div:nth-of-type(9) {
   animation-delay: 1s;
 }
 
@@ -323,16 +405,17 @@ let { color } = storeToRefs(counter);
 }
 
 .text-focus-in {
-  animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 .text-focus-inS {
-  animation: text-focus-in 2s cubic-bezier(.55, .085, .68, .53) both
+  animation: text-focus-in 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 .text-focus-inT {
-  animation: text-focus-in 3s cubic-bezier(.55, .085, .68, .53) both;
-  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+  animation: text-focus-in 3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal,
+    "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
   font-style: normal;
   font-variant: normal;
   font-weight: 500;
@@ -342,42 +425,42 @@ let { color } = storeToRefs(counter);
 @keyframes text-focus-in {
   0% {
     filter: blur(12px);
-    opacity: 0
+    opacity: 0;
   }
 
   100% {
     filter: blur(0);
-    opacity: 1
+    opacity: 1;
   }
 }
 
 .vibrate-1 {
-  animation: vibrate-1 10s linear infinite both
+  animation: vibrate-1 10s linear infinite both;
 }
 
 @keyframes vibrate-1 {
   0% {
-    transform: translate(0)
+    transform: translate(0);
   }
 
   20% {
-    transform: translate(-2px, 2px)
+    transform: translate(-2px, 2px);
   }
 
   40% {
-    transform: translate(-2px, -2px)
+    transform: translate(-2px, -2px);
   }
 
   60% {
-    transform: translate(2px, 2px)
+    transform: translate(2px, 2px);
   }
 
   80% {
-    transform: translate(2px, -2px)
+    transform: translate(2px, -2px);
   }
 
   100% {
-    transform: translate(0)
+    transform: translate(0);
   }
 }
 
@@ -404,7 +487,6 @@ let { color } = storeToRefs(counter);
   width: calc(100% - 300px);
   border-bottom: 2px solid;
   background-size: 5px 5px;
-
 }
 
 .year-box {
@@ -412,7 +494,6 @@ let { color } = storeToRefs(counter);
   display: flex;
   flex-wrap: nowrap;
   height: 427px;
-
 }
 
 .quil-ybox {
@@ -420,9 +501,10 @@ let { color } = storeToRefs(counter);
   min-width: 300px;
   border-right: 2px solid;
   border-bottom: 2px solid;
-  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal,
+    "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
   font-style: italic;
-  letter-spacing: .015em;
+  letter-spacing: 0.015em;
   white-space: nowrap;
   overflow: hidden;
   position: relative;
@@ -436,13 +518,13 @@ let { color } = storeToRefs(counter);
   color: transparent;
   padding: 130px 40px;
   transition-property: color, -webkit-text-stroke;
-  transition-duration: .25s, 1s;
+  transition-duration: 0.25s, 1s;
   transition-timing-function: ease-in-out;
 }
 
 .quil-rbox:hover {
   color: #fff;
-  -webkit-text-stroke: #fff
+  -webkit-text-stroke: #fff;
 }
 
 .quil-pbox {
@@ -481,7 +563,6 @@ let { color } = storeToRefs(counter);
   position: relative;
   min-width: 200px;
   border-bottom: 2px solid;
-  height: 69px;
   padding-top: 12px;
   padding-left: 16px;
 }
@@ -492,4 +573,93 @@ let { color } = storeToRefs(counter);
   top: -50%;
   right: -10px;
   transform: rotate(45deg);
-}</style>
+}
+
+.year-box1 {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 427px;
+}
+
+.quil-ybox1 {
+  width: 300px;
+  min-width: 300px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal,
+    "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+  font-style: italic;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.quil-rbox1 {
+  width: calc(100% - 300px);
+  border-bottom: 2px solid;
+  font-size: 80px;
+  font-weight: normal;
+  color: transparent;
+  padding: 130px 40px;
+  transition-property: color, -webkit-text-stroke;
+  transition-duration: 0.25s, 1s;
+  transition-timing-function: ease-in-out;
+}
+
+.quil-rbox1:hover {
+  color: #fff;
+  -webkit-text-stroke: #fff;
+}
+
+.quil-pbox1 {
+  position: absolute;
+  right: 5%;
+  top: 35%;
+}
+
+.quil-fbox1 {
+  position: absolute;
+  font-size: 160px;
+  right: 75%;
+  top: 60%;
+  bottom: auto;
+  left: auto;
+  -webkit-transform: translate(50%, -50%) rotate(-90deg) translateY(-16%);
+  transform: translate(50%, -50%) rotate(-90deg) translateY(-16%);
+}
+
+.quil-split1 {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 67px;
+}
+
+.split-Lbox1 {
+  width: calc(100% - 200px);
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  background-size: 3px 3px;
+}
+
+.split-Rbox1 {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  min-width: 200px;
+  border-bottom: 2px solid;
+  /* height: 69px; */
+  padding-top: 12px;
+  padding-left: 16px;
+}
+
+.split-point1 {
+  position: absolute;
+  font-size: 80px;
+  top: -50%;
+  right: -10px;
+  transform: rotate(45deg);
+}
+</style>

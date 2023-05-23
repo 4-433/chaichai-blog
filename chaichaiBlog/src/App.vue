@@ -1,12 +1,14 @@
 <!--
- * @Author: fengyuanyao fengyuanyao@fanyu.com
- * @Date: 2023-05-22 15:10:09
- * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2023-05-23 15:51:32
- * @FilePath: \chaiv3\chaichaiBlog\src\App.vue
+ * @Author: Chai chai 2787922490@qq.com
+ * @Date: 2023-05-22 20:51:58
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-05-23 21:52:33
+ * @FilePath: \chaichaiblog\chaichaiBlog\src\App.vue
+ * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
 -->
+
 <template>
   <div class="main-box">
     <div>
@@ -40,17 +42,17 @@ import { useCounterStore } from "@/stores/index";
 import { storeToRefs } from "pinia";
 
 var fun = function (doc: Document, win: Window & typeof globalThis) {
-    var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            docEl.style.fontSize = 10 * (clientWidth / 1920) + 'px';
-        };
-    if (!doc.addEventListener) return;
-    win.addEventListener(resizeEvt, recalc, false);
-    doc.addEventListener('DOMContentLoaded', recalc, false);
-}
+  var docEl = doc.documentElement,
+    resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
+    recalc = function () {
+      var clientWidth = docEl.clientWidth;
+      if (!clientWidth) return;
+      docEl.style.fontSize = 10 * (clientWidth / 1920) + "px";
+    };
+  if (!doc.addEventListener) return;
+  win.addEventListener(resizeEvt, recalc, false);
+  doc.addEventListener("DOMContentLoaded", recalc, false);
+};
 fun(document, window);
 
 const counter = useCounterStore();
@@ -96,15 +98,15 @@ const changeThem = (item) => {
   overflow: hidden;
 }
 body::before {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: url("@/assets/noise.png") 0 0;
-    background-size: 500px 500px;
-    content: "";
-    width: 100%;
-    height: calc(100% + 100px);
-    z-index: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: url("@/assets/noise.png") 0 0;
+  background-size: 500px 500px;
+  content: "";
+  width: 100%;
+  height: calc(100% + 100px);
+  z-index: 0;
 }
 .change-them {
   position: fixed;
