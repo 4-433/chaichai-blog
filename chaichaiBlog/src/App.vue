@@ -1,16 +1,16 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-05-23 21:52:33
- * @FilePath: \chaichaiblog\chaichaiBlog\src\App.vue
+ * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
+ * @LastEditTime: 2023-05-24 16:35:01
+ * @FilePath: \chaiv3\chaichaiBlog\src\App.vue
  * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
 -->
 
 <template>
-  <div class="main-box">
+  <div class="main-box root">
     <div>
       <div class="title-text" :style="{ color: color }">
         wellcome to chaichai.top
@@ -18,14 +18,8 @@
       <div class="change-them" :style="{ color: color }">
         color palette:
         <div class="them-box" style="cursor: point">
-          <span
-            class="them-item"
-            v-for="(item, index) in themList"
-            :key="index"
-            :style="{ background: item }"
-            :class="{ isActive: item === activeColor }"
-            @click="changeThem(item)"
-          ></span>
+          <span class="them-item" v-for="(item, index) in themList" :key="index" :style="{ background: item }"
+            :class="{ isActive: item === activeColor }" @click="changeThem(item)"></span>
         </div>
       </div>
     </div>
@@ -89,7 +83,9 @@ const changeThem = (item) => {
   padding: 0;
   user-select: none;
   box-sizing: border-box;
+  cursor: none;
 }
+
 .main-box {
   position: absolute;
   width: 100vw;
@@ -97,17 +93,73 @@ const changeThem = (item) => {
   background: url("@/assets/bgTexture.webp");
   overflow: hidden;
 }
-body::before {
+
+.root::before {
+  background-image: url("@/assets/noise.png");
+  pointer-events: none !important;
+  background-position: 0 0, 0 0;
+  background-size: 250px 250px, 500px 500px;
+  animation: noiseTextureAnim2 .35s steps(1) infinite;
+  will-change: background-position;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   position: fixed;
-  left: 0;
-  top: 0;
-  background: url("@/assets/noise.png") 0 0;
-  background-size: 500px 500px;
   content: "";
   width: 100%;
-  height: calc(100% + 100px);
-  z-index: 0;
+  z-index: 80;
+  pointer-events: none;
+  height: 100vh;
+  ;
 }
+
+@keyframes noiseTextureAnim2 {
+  0% {
+    background-position: 0 0, 0 0
+  }
+
+  10% {
+    background-position: 10px 10px, 0 0
+  }
+
+  20% {
+    background-position: 150px 20px, 0 0
+  }
+
+  30% {
+    background-position: 125px 125px, 0 0
+  }
+
+  40% {
+    background-position: 40px 170px, 0 0
+  }
+
+  50% {
+    background-position: 125px 125px, 0 0
+  }
+
+  60% {
+    background-position: 90px 10px, 0 0
+  }
+
+  70% {
+    background-position: 60px 100px, 0 0
+  }
+
+  80% {
+    background-position: 20px 70px, 0 0
+  }
+
+  90% {
+    background-position: 120px 80px, 0 0
+  }
+
+  to {
+    background-position: 0 250px, 0 0
+  }
+}
+
 .change-them {
   position: fixed;
   /* top: 10px; */
@@ -121,6 +173,7 @@ body::before {
   text-align: center;
   letter-spacing: 0.015em;
 }
+
 .title-text {
   position: fixed;
   left: 230px;
@@ -131,6 +184,7 @@ body::before {
   text-align: center;
   letter-spacing: 0.015em;
 }
+
 .them-box {
   width: 80px;
   display: flex;
@@ -138,14 +192,17 @@ body::before {
   margin-left: 10px;
   margin-top: 6px;
 }
+
 .them-box span {
   width: 8px;
   height: 8px;
   cursor: pointer;
 }
+
 .isActive {
   height: 16px !important;
 }
+
 .border-box {
   overflow-y: auto;
   overflow-x: hidden;
@@ -156,21 +213,27 @@ body::before {
   bottom: 20px;
   border: 2px solid;
 }
+
 .border-box::-webkit-scrollbar {
   display: none !important;
 }
+
 .blue {
   border: 2px solid #697f9a;
 }
+
 .yellow {
   border: 2px solid #cea54f;
 }
+
 .isYellow {
   color: #cea54f;
 }
+
 .isBlue {
   color: #697f9a;
 }
+
 .mouse-box {
   pointer-events: none;
   display: none;
@@ -181,6 +244,7 @@ body::before {
   top: 0;
   left: 0;
 }
+
 .mouse-border {
   pointer-events: none;
   display: none;
@@ -193,5 +257,4 @@ body::before {
   left: 0;
   transition: all 0.4s;
   transition-timing-function: ease-out;
-}
-</style>
+}</style>
