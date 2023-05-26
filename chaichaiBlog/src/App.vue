@@ -2,8 +2,8 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2023-05-24 16:35:01
- * @FilePath: \chaiv3\chaichaiBlog\src\App.vue
+ * @LastEditTime: 2023-05-26 16:42:13
+ * @FilePath: \chaichaiBlog\src\App.vue
  * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
@@ -24,17 +24,47 @@
       </div>
     </div>
     <div class="border-box" :class="color" :style="{ 'border-color': color }">
-      <RouterView />
+      <div :style="{ color: color }" class="alert-box" v-if="!isCheck">
+        <div class="alert-text">为了您的浏览体验，是否需要为您开启背景音乐</div>
+        <div class="btn-box">
+          <span class="alert-btn1" :style="{ 'border-color': color }" @click="playRedio">yes</span>
+          <span class="alert-btn2" :style="{ 'border-color': color }" @click="isCheck = true">no</span>
+        </div>
+      </div>
+      <RouterView v-else />
     </div>
     <div class="mouse-box" :style="{ 'background-color': color }"></div>
     <div class="mouse-border" :style="{ 'border-color': color }"></div>
+    <audio src="http://music.163.com/song/media/outer/url?id=1327341487.mp3" loop autoplay ref="au"></audio>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useCounterStore } from "@/stores/index";
+import { ref } from "vue";
 import { storeToRefs } from "pinia";
 
+const isCheck = ref(false)
+
+const au = ref<InstanceType<typeof HTMLAudioElement> | null>(null);
+
+/**
+ * @description: 开始摇头
+ * @return {*}
+ */
+const playRedio = () => {
+  au.value.play()
+  isCheck.value = true
+}
+
+/**
+ * @description: 适配rem字体
+ * @param {*} doc
+ * @param {*} win
+ * @param {*} resizeEvt
+ * @param {*} recalc
+ * @return {*}
+ */
 var fun = function (doc: Document, win: Window & typeof globalThis) {
   var docEl = doc.documentElement,
     resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
@@ -70,6 +100,11 @@ document.onmousemove = function (e) {
   div2.style.top = y - 24 + "px";
 };
 
+/**
+ * @description: 切换主题色
+ * @param {*} item
+ * @return {*}
+ */
 const changeThem = (item) => {
   activeColor.value = item;
   color.value = item;
@@ -84,6 +119,61 @@ const changeThem = (item) => {
   user-select: none;
   box-sizing: border-box;
   cursor: none;
+}
+
+.alert-box {
+  width: 100%;
+  text-align: center;
+}
+
+.alert-text {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-top: 200px;
+}
+
+.btn-box {
+  margin: 0 auto;
+  width: 250px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.alert-btn1 {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 2px solid;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  transition: .5s all;
+}
+
+.alert-btn2 {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 2px solid;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  transition: .5s all;
+}
+
+.alert-btn1:hover {
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+}
+
+.alert-btn2:hover {
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
 }
 
 .main-box {
