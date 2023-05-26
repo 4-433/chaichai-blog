@@ -1,9 +1,9 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
- * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2023-05-24 18:03:20
- * @FilePath: \chaiv3\chaichaiBlog\src\views\HomeView.vue
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-05-24 22:45:13
+ * @FilePath: \chaichaiblog\chaichaiBlog\src\views\HomeView.vue
  * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
@@ -17,17 +17,29 @@
       </span>
     </div>
     <div class="title-box">
-      <div class="title-fbox" :style="{
-        'border-color': color,
-        backgroundImage: `linear-gradient(45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
-        backgroundSize: '40px 40px',
-      }"></div>
+      <div
+        class="title-fbox"
+        :style="{
+          'border-color': color,
+          backgroundImage: `linear-gradient(45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
+          backgroundSize: '40px 40px',
+        }"
+      ></div>
       <div class="title-mbox" :style="{ 'border-color': color, color: color }">
         Sound
         <div class="loader">
-          <div class="outer" :style="{ 'border-top-color': color, 'border-right-color': color }"></div>
-          <div class="middle" :style="{ 'border-top-color': color, 'border-right-color': color }"></div>
-          <div class="inner" :style="{ 'border-top-color': color, 'border-right-color': color }"></div>
+          <div
+            class="outer"
+            :style="{ 'border-top-color': color, 'border-right-color': color }"
+          ></div>
+          <div
+            class="middle"
+            :style="{ 'border-top-color': color, 'border-right-color': color }"
+          ></div>
+          <div
+            class="inner"
+            :style="{ 'border-top-color': color, 'border-right-color': color }"
+          ></div>
         </div>
       </div>
       <div class="title-lbox" :style="{ 'border-color': color, color: color }">
@@ -49,7 +61,10 @@
       </div>
     </div>
     <div class="content-box">
-      <div class="content-tbox" :style="{ 'border-color': color, color: color }">
+      <div
+        class="content-tbox"
+        :style="{ 'border-color': color, color: color }"
+      >
         <div class="tbox-text vibrate-1">
           <p>Chai chai</p>
           <p>优秀的博客模板作者</p>
@@ -68,25 +83,30 @@
           <br />
         </div>
       </div>
-      <div class="content-cbox" :style="{ 'border-color': color, color: color }">
+      <div
+        class="content-cbox"
+        :style="{ 'border-color': color, color: color }"
+      >
         <div class="cbox-content text-focus-in">This is the new one</div>
         <div class="cbox-content1">
           <span style="font-size: 8rem" class="text-focus-inS">power by</span>
           <span class="text-focus-inT">Chai chai</span>
         </div>
         <div class="jxw-text">这是我们的吉祥物！↓</div>
-        <div class="jxw-box" style="z-index: 999999!important;"><img src="@/assets/jxw.png" alt=""
-            style="z-index: 999999!important;" /></div>
+        <div class="jxw-box"><img src="@/assets/jxw.png" alt="" /></div>
       </div>
     </div>
     <div class="split-box">
       <div class="split-lbox" :style="{ 'border-color': color, color: color }">
         Works
       </div>
-      <div class="split-rbox" :style="{
-        'border-color': color,
-        backgroundImage: `radial-gradient(${color} 40%, transparent 0)`,
-      }"></div>
+      <div
+        class="split-rbox"
+        :style="{
+          'border-color': color,
+          backgroundImage: `radial-gradient(${color} 40%, transparent 0)`,
+        }"
+      ></div>
     </div>
     <div class="quil-box">
       <div class="year-box">
@@ -106,19 +126,25 @@
           </div>
           <div class="quil-fbox">2023</div>
         </div>
-        <div class="quil-rbox" :style="{
-          'border-color': color,
-          '-webkit-text-stroke': `1px ${color}`,
-        }">
+        <div
+          class="quil-rbox"
+          :style="{
+            'border-color': color,
+            '-webkit-text-stroke': `1px ${color}`,
+          }"
+        >
           無理です！
         </div>
       </div>
       <div class="quil-split">
-        <div class="split-Lbox" :style="{
-          'border-color': color,
-          backgroundImage: `linear-gradient(-45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
-          backgroundSize: '20px 20px',
-        }"></div>
+        <div
+          class="split-Lbox"
+          :style="{
+            'border-color': color,
+            backgroundImage: `linear-gradient(-45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
+            backgroundSize: '20px 20px',
+          }"
+        ></div>
         <div class="split-Rbox" :style="{ color: color }">
           <div>view project</div>
           <div class="split-point" :style="{ color: color }">→</div>
@@ -127,13 +153,19 @@
     </div>
     <div class="quil-box1">
       <div class="year-box1">
-        <div class="quil-rbox1" :style="{
-          'border-color': color,
-          '-webkit-text-stroke': `1px ${color}`,
-        }">
+        <div
+          class="quil-rbox1"
+          :style="{
+            'border-color': color,
+            '-webkit-text-stroke': `1px ${color}`,
+          }"
+        >
           ダメです！
         </div>
-        <div class="quil-ybox1" :style="{ 'border-color': color, color: color }">
+        <div
+          class="quil-ybox1"
+          :style="{ 'border-color': color, color: color }"
+        >
           <div class="quil-fbox1">2022</div>
           <div class="quil-pbox1">
             <p>Art Direction</p>
@@ -155,10 +187,13 @@
           <div>view project</div>
           <div class="split-point1" :style="{ color: color }">→</div>
         </div>
-        <div class="split-Lbox1" :style="{
-          'border-color': color,
-          backgroundImage: `radial-gradient(${color} 40%, transparent 0)`,
-        }"></div>
+        <div
+          class="split-Lbox1"
+          :style="{
+            'border-color': color,
+            backgroundImage: `radial-gradient(${color} 40%, transparent 0)`,
+          }"
+        ></div>
       </div>
     </div>
     <div class="quil-box">
@@ -179,19 +214,25 @@
           </div>
           <div class="quil-fbox">2021</div>
         </div>
-        <div class="quil-rbox" :style="{
-          'border-color': color,
-          '-webkit-text-stroke': `1px ${color}`,
-        }">
+        <div
+          class="quil-rbox"
+          :style="{
+            'border-color': color,
+            '-webkit-text-stroke': `1px ${color}`,
+          }"
+        >
           私は！可愛いです！
         </div>
       </div>
       <div class="quil-split">
-        <div class="split-Lbox" :style="{
-          'border-color': color,
-          backgroundImage: `linear-gradient(-45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
-          backgroundSize: '3px 3px',
-        }"></div>
+        <div
+          class="split-Lbox"
+          :style="{
+            'border-color': color,
+            backgroundImage: `linear-gradient(-45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
+            backgroundSize: '3px 3px',
+          }"
+        ></div>
         <div class="split-Rbox" :style="{ color: color }">
           <div>view project</div>
           <div class="split-point" :style="{ color: color }">→</div>
@@ -200,41 +241,182 @@
     </div>
     <div class="dachi-box">
       <div class="dachi-lbox" :style="{ 'border-color': color, color: color }">
-        <div class="lbox-top" :style="{ '-webkit-text-stroke': `1px ${color}`, 'border-color': color }">馬鹿じゃの？</div>
+        <div
+          class="lbox-top"
+          :style="{
+            '-webkit-text-stroke': `1px ${color}`,
+            'border-color': color,
+          }"
+        >
+          馬鹿じゃの？
+        </div>
         <div class="lbox-bottom">
           <div>
             <p>知らず知らず隠してた</p>
-          <p>本当の声を響かせてよ ほら</p>
-          <p>見ないフリしていても</p>
-          <p>確かにそこに今もそこにあるよ</p>
+            <p>本当の声を響かせてよ ほら</p>
+            <p>見ないフリしていても</p>
+            <p>確かにそこに今もそこにあるよ</p>
           </div>
           <div class="bottom-year">2020</div>
           <div class="bottom-point" :style="{ color: color }">→</div>
         </div>
       </div>
       <div class="dachi-lbox" :style="{ 'border-color': color, color: color }">
-        <div class="lbox-top" :style="{ '-webkit-text-stroke': `1px ${color}`, 'border-color': color }">うるさい！</div>
+        <div
+          class="lbox-top"
+          :style="{
+            '-webkit-text-stroke': `1px ${color}`,
+            'border-color': color,
+          }"
+        >
+          うるさい！
+        </div>
         <div class="lbox-bottom">
           <div>
             <p>知らず知らず隠してた</p>
-          <p>本当の声を響かせてよ さあ</p>
-          <p>見ないフリしていても</p>
-          <p>確かにそこに君の中に</p>
+            <p>本当の声を響かせてよ さあ</p>
+            <p>見ないフリしていても</p>
+            <p>確かにそこに君の中に</p>
           </div>
           <div class="bottom-year">2020</div>
           <div class="bottom-point" :style="{ color: color }">→</div>
         </div>
       </div>
       <div class="dachi-rbox">
-        <div class="rbox-cos"
+        <div
+          class="rbox-cos"
           :style="{
-            'border-color': color, background: `linear-gradient(to bottom right,transparent 0%,transparent calc(50% - 1px),${color} 50%,transparent calc(50% + 1px),transparent 100%)`
-          }">
-        </div>
+            'border-color': color,
+            background: `linear-gradient(to bottom right,transparent 0%,transparent calc(50% - 1px),${color} 50%,transparent calc(50% + 1px),transparent 100%)`,
+          }"
+        ></div>
         <div class="rbox-split" :style="{ color: color }">
           <div>view project</div>
           <div class="rbox-point" :style="{ color: color }">→</div>
         </div>
+      </div>
+    </div>
+
+    <div class="dachi-box">
+      <div class="dachi-rbox">
+        <div
+          class="rbox-cos1"
+          :style="{
+            'border-color': color,
+            background: `linear-gradient(to bottom right,transparent 0%,transparent calc(50% - 1px),${color} 50%,transparent calc(50% + 1px),transparent 100%)`,
+          }"
+        ></div>
+        <div class="rbox-split1" :style="{ color: color }">
+          <div>view project</div>
+          <div class="rbox-point" :style="{ color: color }">→</div>
+        </div>
+      </div>
+      <div class="dachi-lbox" :style="{ 'border-color': color, color: color }">
+        <div
+          class="lbox-top"
+          :style="{
+            '-webkit-text-stroke': `1px ${color}`,
+            'border-color': color,
+          }"
+        >
+          こんにちは
+        </div>
+        <div class="lbox-bottom">
+          <div>
+            <p>知らず知らず隠してた</p>
+            <p>本当の声を響かせてよ ほら</p>
+            <p>見ないフリしていても</p>
+            <p>確かにそこに今もそこにあるよ</p>
+          </div>
+          <div class="bottom-year">2019</div>
+          <div class="bottom-point" :style="{ color: color }">→</div>
+        </div>
+      </div>
+      <div class="dachi-lbox1" :style="{ 'border-color': color, color: color }">
+        <div
+          class="lbox-top"
+          :style="{
+            '-webkit-text-stroke': `1px ${color}`,
+            'border-color': color,
+          }"
+        >
+          お疲れ様です
+        </div>
+        <div class="lbox-bottom">
+          <div>
+            <p>知らず知らず隠してた</p>
+            <p>本当の声を響かせてよ さあ</p>
+            <p>見ないフリしていても</p>
+            <p>確かにそこに君の中に</p>
+          </div>
+          <div class="bottom-year">2019</div>
+          <div class="bottom-point" :style="{ color: color }">→</div>
+        </div>
+      </div>
+    </div>
+    <div class="color-box" :style="{ background: color }">
+      <div class="dots" style="margin-top: 100px; font-size: 26px">
+        <div style="background-color: #fff"></div>
+        <div style="background-color: #fff"></div>
+        <div style="background-color: #fff"></div>
+        <div style="background-color: #fff"></div>
+        <div style="background-color: #fff"></div>
+        <div style="background-color: #fff"></div>
+        <div style="background-color: #fff"></div>
+        <div style="background-color: #fff"></div>
+        <div style="background-color: #fff"></div>
+      </div>
+    </div>
+    <div class="photo-box" :style="{ 'border-color': color, color: color }">
+      <div class="photo-img">
+        <div
+          class="photo-text"
+          :style="{ '-webkit-text-stroke': `2px ${color}` }"
+        >
+          profile
+        </div>
+      </div>
+    </div>
+    <div class="name-box" :style="{ 'border-color': color, color: color }">
+      <div class="chai-box">
+        <div class="chai-item">cha i</div>
+      </div>
+      <div class="chai-rbox">
+        <div
+          class="action-box"
+          :style="{ '-webkit-text-stroke': `1.5px ${color}` }"
+        >
+          大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？
+        </div>
+      </div>
+    </div>
+    <div class="end-box">
+      <div class="end-lbox" :style="{ 'border-color': color, color: color }">
+        <div>
+          <span style="letter-spacing: 1px"
+            >I use the following social media a platforms:</span
+          >
+          <span style="margin-left: 80px">QQ: 2787922490</span>
+        </div>
+        <div class="admin-name">© chaichai</div>
+      </div>
+      <div class="end-rbox" :style="{ color: color }">
+        <div
+          style="
+            margin: 130px 0 0 30px;
+            letter-spacing: 0.025rem;
+            vertical-align: baseline;
+          "
+        >
+          <div style="font-size: 18px; margin-bottom: 30px">Profile</div>
+          <div>This is a blog skin of chaichai, new one.</div>
+          <div>
+            If you like this skin, please tell me, i will do my best for this
+            blog
+          </div>
+        </div>
+
+        <div class="end-point">→</div>
       </div>
     </div>
   </div>
@@ -306,7 +488,9 @@ let { color } = storeToRefs(counter);
   padding-top: 20px;
   padding-left: 20px;
   text-align: left;
-  transition: background-color .4s linear, width .6s cubic-bezier(1, 0, 0, 1), transform .6s cubic-bezier(1, 0, 0, 1), -webkit-transform .6s cubic-bezier(1, 0, 0, 1);
+  transition: background-color 0.4s linear, width 0.6s cubic-bezier(1, 0, 0, 1),
+    transform 0.6s cubic-bezier(1, 0, 0, 1),
+    -webkit-transform 0.6s cubic-bezier(1, 0, 0, 1);
   pointer-events: none;
 }
 
@@ -436,7 +620,7 @@ let { color } = storeToRefs(counter);
   margin: 20px auto;
 }
 
-.dots>div {
+.dots > div {
   width: 0.5em;
   height: 0.5em;
 
@@ -444,23 +628,23 @@ let { color } = storeToRefs(counter);
   animation: fade 1.5s alternate ease-in-out infinite;
 }
 
-.dots>div:nth-of-type(2),
-.dots>div:nth-of-type(4) {
+.dots > div:nth-of-type(2),
+.dots > div:nth-of-type(4) {
   animation-delay: 0.25s;
 }
 
-.dots>div:nth-of-type(3),
-.dots>div:nth-of-type(5),
-.dots>div:nth-of-type(7) {
+.dots > div:nth-of-type(3),
+.dots > div:nth-of-type(5),
+.dots > div:nth-of-type(7) {
   animation-delay: 0.5s;
 }
 
-.dots>div:nth-of-type(6),
-.dots>div:nth-of-type(8) {
+.dots > div:nth-of-type(6),
+.dots > div:nth-of-type(8) {
   animation-delay: 0.75s;
 }
 
-.dots>div:nth-of-type(9) {
+.dots > div:nth-of-type(9) {
   animation-delay: 1s;
 }
 
@@ -743,6 +927,12 @@ let { color } = storeToRefs(counter);
   border-right: 2px solid;
 }
 
+.dachi-lbox1 {
+  min-width: 810px;
+  border-bottom: 2px solid;
+  // border-right: 2px solid;
+}
+
 .lbox-top {
   height: 275px;
   border-bottom: 2px solid;
@@ -772,7 +962,7 @@ let { color } = storeToRefs(counter);
   overflow: hidden;
 }
 
-.bottom-year{
+.bottom-year {
   position: absolute;
   top: -50%;
   right: 0;
@@ -800,6 +990,14 @@ let { color } = storeToRefs(counter);
   padding: 10px 0 0 20px;
   border-bottom: 2px solid;
 }
+.rbox-split1 {
+  position: relative;
+  width: 100%;
+  height: 67px;
+  padding: 10px 0 0 20px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
 
 .rbox-point {
   position: absolute;
@@ -813,5 +1011,143 @@ let { color } = storeToRefs(counter);
   width: 100%;
   height: calc(100% - 67px);
   border-bottom: 2px solid;
+}
+.rbox-cos1 {
+  width: 100%;
+  height: calc(100% - 67px);
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+.color-box {
+  overflow: hidden;
+  width: 100%;
+  height: 280px;
+  text-align: center;
+}
+.photo-box {
+  width: 100%;
+  height: 392px;
+  // text-align: center;
+  border-bottom: 2px solid;
+  position: relative;
+}
+.photo-text {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  font-size: 250px;
+  letter-spacing: 10px;
+  color: transparent;
+  z-index: 9999;
+  transform: rotate(5deg);
+}
+.photo-img {
+  z-index: 0;
+  position: absolute;
+  top: -15%;
+  left: 39%;
+  width: 400px;
+  height: 492px;
+  background: url("@/assets/ss.jpg");
+  background-size: cover;
+  filter: sepia(10%) brightness(0.9);
+  transform: rotate(-5deg);
+  box-shadow: -50px 67px 100px -4px rgba(0, 0, 0, 0.1);
+}
+.name-box {
+  height: 200px;
+  border-bottom: 2px solid;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.chai-box {
+  width: 200px;
+  height: 200px;
+  border-right: 2px solid;
+  overflow: hidden;
+}
+.chai-item {
+  width: 150px;
+  z-index: 999;
+  margin: 0 auto;
+  margin-top: 15px;
+  font-size: 90px;
+  text-align: center;
+  line-height: 80px;
+  text-transform: uppercase;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+.chai-rbox {
+  overflow: hidden;
+  height: 200px;
+  width: calc(100% - 200px);
+  font-size: 230px;
+  border-bottom: 2px solid;
+  line-height: 174px;
+}
+.action-box {
+  position: relative;
+  z-index: -1;
+  display: inline-block;
+  white-space: nowrap;
+  color: transparent;
+  animation: 320s wordsLoop linear infinite normal;
+}
+.name-box:hover {
+  .action-box {
+    color: #fff !important;
+    animation: 320s wordsLoop linear infinite paused;
+  }
+}
+
+@keyframes wordsLoop {
+  0% {
+    transform: translateX(200px);
+    -webkit-transform: translateX(200px);
+  }
+
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes wordsLoop {
+  0% {
+    transform: translateX(200px);
+    -webkit-transform: translateX(200px);
+  }
+
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}
+.end-box {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.end-lbox {
+  width: 604px;
+  border-right: 2px solid;
+  padding: 200px 30px 100px 30px;
+}
+.admin-name {
+  font-size: 100px;
+  vertical-align: baseline;
+  font-style: italic;
+}
+.end-rbox {
+  width: calc(100% - 604px);
+  position: relative;
+}
+.end-point {
+  font-size: 80px;
+  position: absolute;
+  bottom: -4%;
+  right: 3%;
 }
 </style>
