@@ -2,8 +2,8 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-05-22 22:02:22
- * @FilePath: \chaichaiblog\chaichaiBlog\src\stores\counter.ts
+ * @LastEditTime: 2023-10-15 16:56:14
+ * @FilePath: \chaichaiBlog\src\stores\index.ts
  * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
@@ -15,6 +15,7 @@ export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
   const color = ref("#cea54f");
   const activeColor = ref("#cea54f");
+  const isPlay = ref(false)
   const themList = ref([
     "#cea54f",
     "#697f9a",
@@ -28,5 +29,5 @@ export const useCounterStore = defineStore('counter', () => {
     count.value++
   }
 
-  return { count, doubleCount, increment, themList, color, activeColor }
+  return { count, doubleCount, increment, themList, color, activeColor,isPlay }
 })

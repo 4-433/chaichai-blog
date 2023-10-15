@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-10-15 14:49:20
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 14:56:15
+ * @LastEditTime: 2023-10-15 16:09:09
  * @FilePath: \chaichaiBlog\src\views\test.vue
  * @Description: 
  * 
@@ -10,6 +10,7 @@
 -->
 <template>
   <div class="test-box">
+    111
     <chaibutton></chaibutton>
   </div>
 </template>

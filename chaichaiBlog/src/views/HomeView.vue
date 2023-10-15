@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 15:46:53
+ * @LastEditTime: 2023-10-15 16:36:30
  * @FilePath: \chaichaiBlog\src\views\HomeView.vue
  * @Description: 
  * 
@@ -428,7 +428,6 @@
 
 <script setup lang="ts">
 import { useCounterStore } from "@/stores/index.ts";
-import { log } from "console";
 import { storeToRefs } from "pinia";
 import router from "../router";
 const counter = useCounterStore();
