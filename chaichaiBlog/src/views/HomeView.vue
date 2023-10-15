@@ -2,8 +2,8 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-05-24 22:45:13
- * @FilePath: \chaichaiblog\chaichaiBlog\src\views\HomeView.vue
+ * @LastEditTime: 2023-10-15 15:46:53
+ * @FilePath: \chaichaiBlog\src\views\HomeView.vue
  * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
@@ -42,7 +42,11 @@
           ></div>
         </div>
       </div>
-      <div class="title-lbox" :style="{ 'border-color': color, color: color }">
+      <div
+        class="title-lbox"
+        @click="goTest"
+        :style="{ 'border-color': color, color: color }"
+      >
         Profile
       </div>
       <div class="title-ebox" :style="{ 'border-color': color, color: color }">
@@ -424,9 +428,16 @@
 
 <script setup lang="ts">
 import { useCounterStore } from "@/stores/index.ts";
+import { log } from "console";
 import { storeToRefs } from "pinia";
+import router from "../router";
 const counter = useCounterStore();
 let { color } = storeToRefs(counter);
+
+const goTest = () => {
+  console.log(1111);
+  router.push("componentsTest");
+};
 </script>
 
 <style scoped lang="less">
