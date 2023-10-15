@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 16:56:14
+ * @LastEditTime: 2023-10-15 19:18:33
  * @FilePath: \chaichaiBlog\src\stores\index.ts
  * @Description: 
  * 
@@ -13,7 +13,7 @@ import { defineStore } from 'pinia'
 
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
-  const color = ref("#cea54f");
+  // const color = ref("");
   const activeColor = ref("#cea54f");
   const isPlay = ref(false)
   const themList = ref([
@@ -29,5 +29,5 @@ export const useCounterStore = defineStore('counter', () => {
     count.value++
   }
 
-  return { count, doubleCount, increment, themList, color, activeColor,isPlay }
+  return { count, doubleCount, increment, themList, activeColor, isPlay }
 })

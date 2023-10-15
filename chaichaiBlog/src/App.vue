@@ -2,17 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 16:57:34
- * @FilePath: \chaichaiBlog\src\App.vue
- * @Description: 
- * 
- * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
--->
-<!--
- * @Author: Chai chai 2787922490@qq.com
- * @Date: 2023-05-22 20:51:58
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 16:20:47
+ * @LastEditTime: 2023-10-15 23:49:44
  * @FilePath: \chaichaiBlog\src\App.vue
  * @Description: 
  * 
@@ -23,10 +13,14 @@
   <div class="main-box root">
     <chai-them></chai-them>
     <div class="border-box" :class="color" :style="{ 'border-color': color }">
-      <router-view></router-view>
+      <router-view v-slot="{ Component }">
+        <transition name="bounce" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </div>
-    <div class="mouse-box" :style="{ 'background-color': color }"></div>
-    <div class="mouse-border" :style="{ 'border-color': color }"></div>
+    <div class="mouse-box" :style="{ 'background-color': '' }"></div>
+    <div class="mouse-border" :style="{ 'border-color': '' }"></div>
     <audio
       src="http://music.163.com/song/media/outer/url?id=1327341487.mp3"
       loop
@@ -41,7 +35,7 @@ import { storeToRefs } from "pinia";
 import { ref, watch } from "vue";
 import { useCounterStore } from "./stores";
 const counter = useCounterStore();
-let { color, isPlay } = storeToRefs(counter);
+let { isPlay } = storeToRefs(counter);
 
 const au = ref<InstanceType<typeof HTMLAudioElement> | null>(null);
 
@@ -100,7 +94,27 @@ document.onmousemove = function (e) {
   padding: 0;
   user-select: none;
   box-sizing: border-box;
-  cursor: none;
+  /* cursor: none; */
+}
+
+.bounce-enter-active {
+  animation: bounce-in 1s;
+}
+.bounce-leave-active {
+  animation: bounce-in 1s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .main-box {

@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 16:36:30
+ * @LastEditTime: 2023-10-15 21:01:13
  * @FilePath: \chaichaiBlog\src\views\HomeView.vue
  * @Description: 
  * 
@@ -434,7 +434,6 @@ const counter = useCounterStore();
 let { color } = storeToRefs(counter);
 
 const goTest = () => {
-  console.log(1111);
   router.push("componentsTest");
 };
 </script>

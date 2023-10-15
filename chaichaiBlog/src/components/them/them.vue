@@ -23,7 +23,15 @@ import { useCounterStore } from "../../stores";
 import { storeToRefs } from "pinia";
 
 const counter = useCounterStore();
-let { themList, color, activeColor } = storeToRefs(counter);
+const body = document.body;
+if (document.body.style.getPropertyValue("color") === "") {
+  body.style.setProperty("color", "#cea54f", "");
+  body.style.setProperty("background-color", "#cea54f", "");
+  body.style.setProperty("-webkit-text-stroke", "#cea54f", "");
+  body.style.setProperty("border-color", "#cea54f", "");
+}
+
+let { themList, activeColor } = storeToRefs(counter);
 /**
  * @description: 切换主题色
  * @param {*} item
@@ -31,7 +39,12 @@ let { themList, color, activeColor } = storeToRefs(counter);
  */
 const changeThem = (item) => {
   activeColor.value = item;
-  color.value = item;
+  body.style.setProperty("color", item.toString(), "");
+  body.style.setProperty("border-color", item.toString(), "");
+  body.style.setProperty("background-color", item.toString(), "");
+  body.style.setProperty("-webkit-text-stroke", item.toString(), "");
+
+  //   color.value = item;
 };
 </script> 
 

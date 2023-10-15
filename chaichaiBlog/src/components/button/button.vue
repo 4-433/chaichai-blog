@@ -1,21 +1,31 @@
 
 <template>
-  <button class="btn orange" v-if="isPlain">
+  <span class="btn orange" @click="click" v-if="isPlain">
     <slot></slot>
-  </button>
-  <button class="btn1 orange1" v-if="!isPlain">
+  </span>
+  <span class="btn1 orange1" @click="click" v-if="!isPlain">
     <slot></slot>
-  </button>
+  </span>
 </template>
 
 <script lang="ts" setup>
-import { storeToRefs } from "pinia";
 import { ref } from "vue";
-import { useCounterStore } from "../../stores";
 
-const counter = useCounterStore();
-let { color } = storeToRefs(counter);
-let backColor = color.value + "80";
+const emits = defineEmits(["click"]);
+
+const click = () => {
+  emits("click");
+};
+
+// const insertStrFn = (str: string, index: number, insertStr: string) => {
+//   const ary = str.split("");
+//   ary.splice(index, 0, insertStr);
+//   return ary.join("");
+// };
+
+// let bodyDom = document.body;
+// let color = bodyDom.style.getPropertyValue("color");
+// let backColor = insertStrFn(color, color.split("").length - 1, ",.6");
 
 const props = defineProps(["plain"]);
 const isPlain = ref(true);
@@ -27,7 +37,7 @@ if (props.plain === undefined) {
 <style>
 .btn {
   margin-top: 20px;
-  border: 2px solid transparent;
+  border: 2px solid;
   border-radius: 0;
   text-transform: uppercase;
   position: relative;
@@ -40,23 +50,23 @@ if (props.plain === undefined) {
 
 .btn1 {
   margin-top: 20px;
-  border: 2px solid transparent;
+  border: 2px solid;
   border-radius: 0;
   text-transform: uppercase;
   position: relative;
   transition: all 0.3s ease 0s;
   cursor: pointer;
   padding: 8px 16px;
-  background-color: v-bind(color);
-  color: #fff;
+  /* background-color: v-bind(color); */
+  /* color: #fff; */
   border-radius: 1px;
 }
 
 .btn:before {
   content: "";
   height: 6px;
-  border-bottom: 2px solid transparent;
-  border-left: 2px solid transparent;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
   position: absolute;
   bottom: -8px;
   left: 4px;
@@ -67,8 +77,8 @@ if (props.plain === undefined) {
 .btn1:before {
   content: "";
   height: 6px;
-  border-bottom: 2px solid transparent;
-  border-left: 2px solid transparent;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
   position: absolute;
   bottom: -8px;
   left: 4px;
@@ -80,7 +90,7 @@ if (props.plain === undefined) {
   bottom: -2px;
   left: -2px;
   right: 2px;
-  border-color: v-bind(color);
+  /* border-color: v-bind(color); */
   border-radius: 0;
 }
 
@@ -88,15 +98,15 @@ if (props.plain === undefined) {
   bottom: -2px;
   left: -2px;
   right: 2px;
-  border-color: v-bind(color);
+  /* border-color: v-bind(color); */
   border-radius: 0;
 }
 
 .btn:after {
   content: "";
   width: 6px;
-  border-right: 2px solid transparent;
-  border-top: 2px solid transparent;
+  border-right: 2px solid;
+  border-top: 2px solid;
   position: absolute;
   bottom: -8px;
   right: -8px;
@@ -107,8 +117,8 @@ if (props.plain === undefined) {
 .btn1:after {
   content: "";
   width: 6px;
-  border-right: 2px solid transparent;
-  border-top: 2px solid transparent;
+  border-right: 2px solid;
+  border-top: 2px solid;
   position: absolute;
   bottom: -8px;
   right: -8px;
@@ -120,7 +130,7 @@ if (props.plain === undefined) {
   bottom: 2px;
   right: -2px;
   top: -2px;
-  border-color: v-bind(color);
+  /* border-color: v-bind(color); */
   border-radius: 0;
 }
 
@@ -128,34 +138,34 @@ if (props.plain === undefined) {
   bottom: 2px;
   right: -2px;
   top: -2px;
-  border-color: v-bind(color);
+  /* border-color: v-bind(color); */
   border-radius: 0;
 }
 
 .btn.orange {
-  border-color: v-bind(color);
-  color: v-bind(color);
+  /* border-color: v-bind(color); */
+  /* color: v-bind(color); */
   border-radius: 5px;
 }
 
 .btn.orange:before,
 .btn.orange:after {
-  border-color: v-bind(backColor);
+  /* border-color: v-bind(backColor); */
   border-radius: 3px;
-  color: v-bind(color);
+  /* color: v-bind(color); */
 }
 
 .btn1.orange1 {
-  border-color: v-bind(color);
-  color: #fff;
+  /* border-color: v-bind(color); */
+  /* color: #fff; */
   border-radius: 5px;
 }
 
 .btn1.orange1:before,
 .btn1.orange1:after {
-  border-color: v-bind(backColor);
+  /* border-color: v-bind(backColor); */
   border-radius: 3px;
-  color: v-bind(color);
+  /* color: v-bind(color); */
 }
 
 @media only screen and (max-width: 767px) {

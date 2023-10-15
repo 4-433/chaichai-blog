@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-10-15 15:57:04
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 16:58:36
+ * @LastEditTime: 2023-10-15 23:25:56
  * @FilePath: \chaichaiBlog\src\views\welcome.vue
  * @Description: 
  * 
@@ -42,7 +42,7 @@ let { color, isPlay } = storeToRefs(counter);
  */
 const playRedio = async (status: boolean) => {
   isPlay.value = status;
-  router.push("/componentsTest");
+  router.push("/home");
 };
 </script>
 
