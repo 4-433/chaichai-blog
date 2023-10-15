@@ -1,15 +1,27 @@
+
 <template>
-  <div>
-    <div style="margin-top: 200px; margin-left: 100px">
-      <span class="btn btn-lg orange">确 定</span>
-    </div>
-    <div style="margin-top: 200px; margin-left: 100px">
-      <span class="btn1 btn-lg orange1">取 消</span>
-    </div>
-  </div>
+  <button class="btn orange" v-if="isPlain">
+    <slot></slot>
+  </button>
+  <button class="btn1 orange1" v-if="!isPlain">
+    <slot></slot>
+  </button>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import { storeToRefs } from "pinia";
+import { ref } from "vue";
+import { useCounterStore } from "../../stores";
+
+const counter = useCounterStore();
+let { color } = storeToRefs(counter);
+let backColor = color.value + "80";
+
+const props = defineProps(["plain"]);
+const isPlain = ref(true);
+if (props.plain === undefined) {
+  isPlain.value = false;
+}
 </script>
 
 <style>
@@ -23,6 +35,7 @@
   cursor: pointer;
   padding: 8px 16px;
   border-radius: 1px;
+  background: rgba(0, 0, 0, 0);
 }
 
 .btn1 {
@@ -34,7 +47,7 @@
   transition: all 0.3s ease 0s;
   cursor: pointer;
   padding: 8px 16px;
-  background-color: rgb(205, 164, 79);
+  background-color: v-bind(color);
   color: #fff;
   border-radius: 1px;
 }
@@ -67,7 +80,7 @@
   bottom: -2px;
   left: -2px;
   right: 2px;
-  border-color: #e16b47;
+  border-color: v-bind(color);
   border-radius: 0;
 }
 
@@ -75,7 +88,7 @@
   bottom: -2px;
   left: -2px;
   right: 2px;
-  border-color: #e16b47;
+  border-color: v-bind(color);
   border-radius: 0;
 }
 
@@ -107,7 +120,7 @@
   bottom: 2px;
   right: -2px;
   top: -2px;
-  border-color: #e16b47;
+  border-color: v-bind(color);
   border-radius: 0;
 }
 
@@ -115,34 +128,34 @@
   bottom: 2px;
   right: -2px;
   top: -2px;
-  border-color: #e16b47;
+  border-color: v-bind(color);
   border-radius: 0;
 }
 
 .btn.orange {
-  border-color: rgb(205, 164, 79);
-  color: rgb(205, 164, 79);
+  border-color: v-bind(color);
+  color: v-bind(color);
   border-radius: 5px;
 }
 
 .btn.orange:before,
 .btn.orange:after {
-  border-color: rgb(205, 164, 79, 0.6);
+  border-color: v-bind(backColor);
   border-radius: 3px;
-  color: rgb(205, 164, 79);
+  color: v-bind(color);
 }
 
 .btn1.orange1 {
-  border-color: rgb(205, 164, 79);
+  border-color: v-bind(color);
   color: #fff;
   border-radius: 5px;
 }
 
 .btn1.orange1:before,
 .btn1.orange1:after {
-  border-color: rgb(205, 164, 79, 0.6);
+  border-color: v-bind(backColor);
   border-radius: 3px;
-  color: rgb(205, 164, 79);
+  color: v-bind(color);
 }
 
 @media only screen and (max-width: 767px) {
