@@ -1,9 +1,7 @@
 
 <template>
-  <div class="title-text" :style="{ color: color }">
-    wellcome to chaichai.top
-  </div>
-  <div class="change-them" :style="{ color: color }">
+  <div class="title-text">wellcome to chaichai.top</div>
+  <div class="change-them">
     color palette:
     <div class="them-box" style="cursor: point">
       <span
@@ -14,43 +12,54 @@
         :class="{ isActive: item === activeColor }"
         @click="changeThem(item)"
       ></span>
+      <chai-color
+        @changeThem="changeThem"
+        style="margin-bottom: 10px"
+      ></chai-color>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from "../../stores";
-import { storeToRefs } from "pinia";
+import chaiColor from "@/components/colorPick/colorPick.vue";
+import { ref } from "vue";
 
-const counter = useCounterStore();
 const body = document.body;
-if (document.body.style.getPropertyValue("color") === "") {
-  body.style.setProperty("color", "#cea54f", "");
-  body.style.setProperty("background-color", "#cea54f", "");
-  body.style.setProperty("-webkit-text-stroke", "#cea54f", "");
-  body.style.setProperty("border-color", "#cea54f", "");
+
+const themList = [
+  "#cea54f",
+  "#697f9a",
+  "#4b9674",
+  "#90a085",
+  "#99a6a1",
+  "#272624",
+];
+let activeColor = ref("");
+
+if (localStorage.getItem("activeColor") === null) {
+  localStorage.setItem("activeColor", themList[0]);
+  body.style.setProperty("--base-color", themList[0], "");
 }
 
-let { themList, activeColor } = storeToRefs(counter);
+activeColor.value = localStorage.getItem("activeColor") as string;
+body.style.setProperty("--base-color", activeColor.value, "");
+
 /**
  * @description: 切换主题色
  * @param {*} item
  * @return {*}
  */
-const changeThem = (item) => {
-  activeColor.value = item;
-  body.style.setProperty("color", item.toString(), "");
-  body.style.setProperty("border-color", item.toString(), "");
-  body.style.setProperty("background-color", item.toString(), "");
-  body.style.setProperty("-webkit-text-stroke", item.toString(), "");
-
-  //   color.value = item;
+const changeThem = (item: string): any => {
+  localStorage.setItem("activeColor", item);
+  activeColor.value = localStorage.getItem("activeColor") as string;
+  body.style.setProperty("--base-color", item, "");
 };
 </script> 
 
-<style scoped>
+<style lang="scss">
 .change-them {
   position: fixed;
+  color: var(--base-color);
   /* top: 10px; */
   right: 20px;
   display: flex;
@@ -63,6 +72,11 @@ const changeThem = (item) => {
   letter-spacing: 0.015em;
 }
 
+.base-color {
+  color: var(--borderColor);
+  --border-color: var("borderColor");
+}
+
 .title-text {
   position: fixed;
   left: 230px;
@@ -72,6 +86,7 @@ const changeThem = (item) => {
   font-style: italic;
   text-align: center;
   letter-spacing: 0.015em;
+  color: var(--base-color);
 }
 
 .them-box {

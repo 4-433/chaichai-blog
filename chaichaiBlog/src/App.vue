@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 23:49:44
+ * @LastEditTime: 2023-10-16 21:59:04
  * @FilePath: \chaichaiBlog\src\App.vue
  * @Description: 
  * 
@@ -10,23 +10,25 @@
 -->
 
 <template>
-  <div class="main-box root">
-    <chai-them></chai-them>
-    <div class="border-box" :class="color" :style="{ 'border-color': color }">
-      <router-view v-slot="{ Component }">
-        <transition name="bounce" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
+  <transition name="bounce">
+    <div class="main-box root">
+      <chai-them></chai-them>
+      <div class="border-box" :style="{ 'border-color': color }">
+        <router-view v-slot="{ Component }">
+          <transition name="bounce" mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </router-view>
+      </div>
+      <div class="mouse-box" :style="{ 'background-color': '' }"></div>
+      <div class="mouse-border" :style="{ 'border-color': '' }"></div>
+      <audio
+        src="http://music.163.com/song/media/outer/url?id=1327341487.mp3"
+        loop
+        ref="au"
+      ></audio>
     </div>
-    <div class="mouse-box" :style="{ 'background-color': '' }"></div>
-    <div class="mouse-border" :style="{ 'border-color': '' }"></div>
-    <audio
-      src="http://music.163.com/song/media/outer/url?id=1327341487.mp3"
-      loop
-      ref="au"
-    ></audio>
-  </div>
+  </transition>
 </template>
  
 <script setup lang="ts">
@@ -34,17 +36,17 @@ import chaiThem from "@/components/them/them.vue";
 import { storeToRefs } from "pinia";
 import { ref, watch } from "vue";
 import { useCounterStore } from "./stores";
-const counter = useCounterStore()
-let { isPlay } = storeToRefs(counter)
+const counter = useCounterStore();
+let { isPlay } = storeToRefs(counter);
 
-const au = ref<InstanceType<typeof HTMLAudioElement> | null>(null)
+const au = ref<InstanceType<typeof HTMLAudioElement> | null>(null);
 
 watch(isPlay, (newV) => {
-  console.log(newV, "newplay")
+  console.log(newV, "newplay");
   if (newV) {
-    au.value.play()
+    au.value.play();
   }
-})
+});
 
 /**
  * @description: 适配rem字体
@@ -58,15 +60,15 @@ var fun = function (doc: Document, win: Window & typeof globalThis) {
   var docEl = doc.documentElement,
     resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
     recalc = function () {
-      var clientWidth = docEl.clientWidth
-      if (!clientWidth) return
-      docEl.style.fontSize = 10 * (clientWidth / 1920) + "px"
+      var clientWidth = docEl.clientWidth;
+      if (!clientWidth) return;
+      docEl.style.fontSize = 10 * (clientWidth / 1920) + "px";
     };
-  if (!doc.addEventListener) return
-  win.addEventListener(resizeEvt, recalc, false)
-  doc.addEventListener("DOMContentLoaded", recalc, false)
+  if (!doc.addEventListener) return;
+  win.addEventListener(resizeEvt, recalc, false);
+  doc.addEventListener("DOMContentLoaded", recalc, false);
 };
-fun(document, window)
+fun(document, window);
 
 /**
  * @description: 预定效果跟随鼠标移动
@@ -78,13 +80,13 @@ document.onmousemove = function (e) {
   var div2 = document.querySelector(".mouse-border") as HTMLElement;
   var x = e.clientX;
   var y = e.clientY;
-  div.style.display = "block"
-  div2.style.display = "block"
-  div.style.left = x - 4 + "px"
-  div.style.top = y - 4 + "px"
-  div2.style.left = x - 24 + "px"
-  div2.style.top = y - 24 + "px"
-}
+  div.style.display = "block";
+  div2.style.display = "block";
+  div.style.left = x - 4 + "px";
+  div.style.top = y - 4 + "px";
+  div2.style.left = x - 24 + "px";
+  div2.style.top = y - 24 + "px";
+};
 </script>
 
 
@@ -198,7 +200,7 @@ document.onmousemove = function (e) {
   right: 20px;
   left: 20px;
   bottom: 20px;
-  border: 2px solid;
+  border: 2px solid var(--base-color);
 }
 
 .border-box::-webkit-scrollbar {

@@ -57,7 +57,7 @@ if (props.plain === undefined) {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   padding: 8px 16px;
-  /* background-color: v-bind(color); */
+  background-color: var(--base-color);
   /* color: #fff; */
   border-radius: 1px;
 }
@@ -143,29 +143,29 @@ if (props.plain === undefined) {
 }
 
 .btn.orange {
-  /* border-color: v-bind(color); */
-  /* color: v-bind(color); */
+  border-color: var(--base-color);
+  color: var(--base-color);
   border-radius: 5px;
 }
 
 .btn.orange:before,
 .btn.orange:after {
-  /* border-color: v-bind(backColor); */
+  border-color: var(--base-color);
   border-radius: 3px;
-  /* color: v-bind(color); */
+  color: var(--base-color);
 }
 
 .btn1.orange1 {
-  /* border-color: v-bind(color); */
-  /* color: #fff; */
+  border-color: var(--base-color);
+  color: #fff;
   border-radius: 5px;
 }
 
 .btn1.orange1:before,
 .btn1.orange1:after {
-  /* border-color: v-bind(backColor); */
+  border-color: var(--base-color);
   border-radius: 3px;
-  /* color: v-bind(color); */
+  color: var(--base-color);
 }
 
 @media only screen and (max-width: 767px) {

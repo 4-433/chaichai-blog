@@ -2,28 +2,18 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-10-15 15:57:04
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 23:25:56
+ * @LastEditTime: 2023-10-16 21:59:52
  * @FilePath: \chaichaiBlog\src\views\welcome.vue
  * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
 -->
 <template>
-  <div :style="{ color: color }" class="alert-box">
+  <div class="alert-box">
     <div class="alert-text">为了您的浏览体验，是否需要为您开启背景音乐</div>
     <div class="btn-box">
-      <span
-        class="alert-btn1"
-        :style="{ 'border-color': color }"
-        @click="playRedio(true)"
-        >yes</span
-      >
-      <span
-        class="alert-btn2"
-        :style="{ 'border-color': color }"
-        @click="playRedio(false)"
-        >no</span
-      >
+      <span class="alert-btn1" @click="playRedio(true)">yes</span>
+      <span class="alert-btn2" @click="playRedio(false)">no</span>
     </div>
   </div>
 </template>
@@ -34,7 +24,7 @@ import { storeToRefs } from "pinia";
 import router from "../router";
 
 const counter = useCounterStore();
-let { color, isPlay } = storeToRefs(counter);
+let { isPlay } = storeToRefs(counter);
 
 /**
  * @description: 开始摇头
@@ -51,6 +41,7 @@ const playRedio = async (status: boolean) => {
 .alert-box {
   width: 100%;
   text-align: center;
+  color: var(--base-color);
 }
 
 .alert-text {
@@ -84,7 +75,7 @@ const playRedio = async (status: boolean) => {
   display: inline-block;
   width: 100px;
   height: 100px;
-  border: 2px solid;
+  border: 2px solid var(--base-color);
   border-radius: 50%;
   text-align: center;
   line-height: 100px;

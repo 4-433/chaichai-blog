@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 21:01:13
+ * @LastEditTime: 2023-10-16 22:39:45
  * @FilePath: \chaichaiBlog\src\views\HomeView.vue
  * @Description: 
  * 
@@ -17,50 +17,28 @@
       </span>
     </div>
     <div class="title-box">
-      <div
-        class="title-fbox"
-        :style="{
-          'border-color': color,
-          backgroundImage: `linear-gradient(45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
-          backgroundSize: '40px 40px',
-        }"
-      ></div>
-      <div class="title-mbox" :style="{ 'border-color': color, color: color }">
+      <div class="title-fbox"></div>
+      <div class="title-mbox">
         Sound
         <div class="loader">
-          <div
-            class="outer"
-            :style="{ 'border-top-color': color, 'border-right-color': color }"
-          ></div>
-          <div
-            class="middle"
-            :style="{ 'border-top-color': color, 'border-right-color': color }"
-          ></div>
-          <div
-            class="inner"
-            :style="{ 'border-top-color': color, 'border-right-color': color }"
-          ></div>
+          <div class="outer"></div>
+          <div class="middle"></div>
+          <div class="inner"></div>
         </div>
       </div>
-      <div
-        class="title-lbox"
-        @click="goTest"
-        :style="{ 'border-color': color, color: color }"
-      >
-        Profile
-      </div>
+      <div class="title-lbox" @click="goTest">Profile</div>
       <div class="title-ebox" :style="{ 'border-color': color, color: color }">
         Works
         <div class="dots">
-          <div :style="{ 'background-color': color }"></div>
-          <div :style="{ 'background-color': color }"></div>
-          <div :style="{ 'background-color': color }"></div>
-          <div :style="{ 'background-color': color }"></div>
-          <div :style="{ 'background-color': color }"></div>
-          <div :style="{ 'background-color': color }"></div>
-          <div :style="{ 'background-color': color }"></div>
-          <div :style="{ 'background-color': color }"></div>
-          <div :style="{ 'background-color': color }"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
         </div>
       </div>
     </div>
@@ -218,15 +196,7 @@
           </div>
           <div class="quil-fbox">2021</div>
         </div>
-        <div
-          class="quil-rbox"
-          :style="{
-            'border-color': color,
-            '-webkit-text-stroke': `1px ${color}`,
-          }"
-        >
-          私は！可愛いです！
-        </div>
+        <div class="quil-rbox">私は！可愛いです！</div>
       </div>
       <div class="quil-split">
         <div
@@ -245,15 +215,7 @@
     </div>
     <div class="dachi-box">
       <div class="dachi-lbox" :style="{ 'border-color': color, color: color }">
-        <div
-          class="lbox-top"
-          :style="{
-            '-webkit-text-stroke': `1px ${color}`,
-            'border-color': color,
-          }"
-        >
-          馬鹿じゃの？
-        </div>
+        <div class="lbox-top">馬鹿じゃの？</div>
         <div class="lbox-bottom">
           <div>
             <p>知らず知らず隠してた</p>
@@ -266,15 +228,7 @@
         </div>
       </div>
       <div class="dachi-lbox" :style="{ 'border-color': color, color: color }">
-        <div
-          class="lbox-top"
-          :style="{
-            '-webkit-text-stroke': `1px ${color}`,
-            'border-color': color,
-          }"
-        >
-          うるさい！
-        </div>
+        <div class="lbox-top">うるさい！</div>
         <div class="lbox-bottom">
           <div>
             <p>知らず知らず隠してた</p>
@@ -337,15 +291,7 @@
         </div>
       </div>
       <div class="dachi-lbox1" :style="{ 'border-color': color, color: color }">
-        <div
-          class="lbox-top"
-          :style="{
-            '-webkit-text-stroke': `1px ${color}`,
-            'border-color': color,
-          }"
-        >
-          お疲れ様です
-        </div>
+        <div class="lbox-top">お疲れ様です</div>
         <div class="lbox-bottom">
           <div>
             <p>知らず知らず隠してた</p>
@@ -358,7 +304,7 @@
         </div>
       </div>
     </div>
-    <div class="color-box" :style="{ background: color }">
+    <div class="color-box">
       <div class="dots" style="margin-top: 100px; font-size: 26px">
         <div style="background-color: #fff"></div>
         <div style="background-color: #fff"></div>
@@ -373,12 +319,7 @@
     </div>
     <div class="photo-box" :style="{ 'border-color': color, color: color }">
       <div class="photo-img">
-        <div
-          class="photo-text"
-          :style="{ '-webkit-text-stroke': `2px ${color}` }"
-        >
-          profile
-        </div>
+        <div class="photo-text">profile</div>
       </div>
     </div>
     <div class="name-box" :style="{ 'border-color': color, color: color }">
@@ -386,10 +327,7 @@
         <div class="chai-item">cha i</div>
       </div>
       <div class="chai-rbox">
-        <div
-          class="action-box"
-          :style="{ '-webkit-text-stroke': `1.5px ${color}` }"
-        >
+        <div class="action-box">
           大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？大丈夫ですか？
         </div>
       </div>
@@ -440,6 +378,7 @@ const goTest = () => {
 
 <style scoped lang="less">
 .img {
+  color: var(--base-color);
   position: relative;
   /* width: 100%; */
   /* height: 100vh; */
@@ -475,6 +414,17 @@ const goTest = () => {
   /* flex: 12.5; */
   border-right: 2px solid;
   border-bottom: 2px solid;
+  border-color: var(--base-color);
+  background-image: linear-gradient(
+    45deg,
+    var(--base-color) 25%,
+    transparent 0,
+    transparent 50%,
+    var(--base-color) 0,
+    var(--base-color) 75%,
+    transparent 0
+  );
+  background-size: 40px 40px;
 }
 
 .title-mbox {
@@ -486,9 +436,12 @@ const goTest = () => {
   padding-top: 20px;
   border-bottom: 2px solid;
   border-right: 2px solid;
+  border-color: var(--base-color);
+  color: var(--base-color);
 }
 
 .title-lbox {
+  color: var(--base-color);
   width: 1300px;
   /* flex: 48; */
   border-bottom: 2px solid;
@@ -503,6 +456,13 @@ const goTest = () => {
   pointer-events: none;
 }
 
+.dots-item {
+  background-color: var(--base-color);
+}
+
+dots-item1 {
+  background-color: #fff;
+}
 .title-ebox {
   flex: 8;
   min-width: 150px;
@@ -594,6 +554,8 @@ const goTest = () => {
   margin-left: -1.75em;
   margin-top: -1.75em;
   animation: spin 2s linear infinite;
+  border-top-color: var(--base-color);
+  border-right-color: var(--base-color);
 }
 
 .middle {
@@ -602,6 +564,8 @@ const goTest = () => {
   margin-left: -1.05em;
   margin-top: -1.05em;
   animation: spin 1.75s linear reverse infinite;
+  border-top-color: var(--base-color);
+  border-right-color: var(--base-color);
 }
 
 .inner {
@@ -610,6 +574,8 @@ const goTest = () => {
   margin-left: -0.4em;
   margin-top: -0.4em;
   animation: spin 1.5s linear infinite;
+  border-top-color: var(--base-color);
+  border-right-color: var(--base-color);
 }
 
 @keyframes spin {
@@ -774,6 +740,8 @@ const goTest = () => {
   width: calc(100% - 300px);
   border-bottom: 2px solid;
   font-size: 80px;
+  border-color: var(--base-color);
+  -webkit-text-stroke: 1px var(--base-color);
   font-weight: normal;
   color: transparent;
   padding: 130px 40px;
@@ -943,6 +911,8 @@ const goTest = () => {
 }
 
 .lbox-top {
+  border-color: var(--base-color);
+  -webkit-text-stroke: 1px var(--base-color);
   height: 275px;
   border-bottom: 2px solid;
   font-size: 80px;
@@ -1032,6 +1002,7 @@ const goTest = () => {
   width: 100%;
   height: 280px;
   text-align: center;
+  background: var(--base-color);
 }
 .photo-box {
   width: 100%;
@@ -1041,6 +1012,7 @@ const goTest = () => {
   position: relative;
 }
 .photo-text {
+  -webkit-text-stroke: 2px var(--base-color);
   position: absolute;
   top: 0;
   left: -40%;
@@ -1096,6 +1068,7 @@ const goTest = () => {
   line-height: 174px;
 }
 .action-box {
+  -webkit-text-stroke: 1.5px var(--base-color);
   position: relative;
   z-index: -1;
   display: inline-block;
