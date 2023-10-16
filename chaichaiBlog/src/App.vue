@@ -34,17 +34,17 @@ import chaiThem from "@/components/them/them.vue";
 import { storeToRefs } from "pinia";
 import { ref, watch } from "vue";
 import { useCounterStore } from "./stores";
-const counter = useCounterStore();
-let { isPlay } = storeToRefs(counter);
+const counter = useCounterStore()
+let { isPlay } = storeToRefs(counter)
 
-const au = ref<InstanceType<typeof HTMLAudioElement> | null>(null);
+const au = ref<InstanceType<typeof HTMLAudioElement> | null>(null)
 
 watch(isPlay, (newV) => {
-  console.log(newV, "newplay");
+  console.log(newV, "newplay")
   if (newV) {
-    au.value.play();
+    au.value.play()
   }
-});
+})
 
 /**
  * @description: 适配rem字体
@@ -58,15 +58,15 @@ var fun = function (doc: Document, win: Window & typeof globalThis) {
   var docEl = doc.documentElement,
     resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
     recalc = function () {
-      var clientWidth = docEl.clientWidth;
-      if (!clientWidth) return;
-      docEl.style.fontSize = 10 * (clientWidth / 1920) + "px";
+      var clientWidth = docEl.clientWidth
+      if (!clientWidth) return
+      docEl.style.fontSize = 10 * (clientWidth / 1920) + "px"
     };
-  if (!doc.addEventListener) return;
-  win.addEventListener(resizeEvt, recalc, false);
-  doc.addEventListener("DOMContentLoaded", recalc, false);
+  if (!doc.addEventListener) return
+  win.addEventListener(resizeEvt, recalc, false)
+  doc.addEventListener("DOMContentLoaded", recalc, false)
 };
-fun(document, window);
+fun(document, window)
 
 /**
  * @description: 预定效果跟随鼠标移动
@@ -78,13 +78,13 @@ document.onmousemove = function (e) {
   var div2 = document.querySelector(".mouse-border") as HTMLElement;
   var x = e.clientX;
   var y = e.clientY;
-  div.style.display = "block";
-  div2.style.display = "block";
-  div.style.left = x - 4 + "px";
-  div.style.top = y - 4 + "px";
-  div2.style.left = x - 24 + "px";
-  div2.style.top = y - 24 + "px";
-};
+  div.style.display = "block"
+  div2.style.display = "block"
+  div.style.left = x - 4 + "px"
+  div.style.top = y - 4 + "px"
+  div2.style.left = x - 24 + "px"
+  div2.style.top = y - 24 + "px"
+}
 </script>
 
 
