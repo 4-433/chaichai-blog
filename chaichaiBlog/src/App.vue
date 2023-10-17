@@ -130,7 +130,6 @@ fitRem(document, window)
   border: 2px solid var(--base-color);
   overflow-y: auto;
   overflow-x: hidden;
-
 }
 
 .border-box::-webkit-scrollbar {
