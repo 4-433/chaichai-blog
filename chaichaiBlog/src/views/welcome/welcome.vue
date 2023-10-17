@@ -29,21 +29,23 @@
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from "@/stores/index";
-import { storeToRefs } from "pinia";
-import router from "../router";
+import { useCounterStore } from "@/stores/index"
+import { storeToRefs } from "pinia"
+import router from "@/router"
 
-const counter = useCounterStore();
-let { color, isPlay } = storeToRefs(counter);
+const counter = useCounterStore()
+let { color, isPlay } = storeToRefs(counter)
 
 /**
  * @description: 开始摇头
  * @return {*}
  */
-const playRedio = async (status: boolean) => {
-  isPlay.value = status;
-  router.push("/home");
-};
+const playRedio = (status: boolean) => {
+  console.log(2)
+  
+  isPlay.value = status
+  router.push("/home")
+}
 </script>
 
 

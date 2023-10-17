@@ -429,7 +429,7 @@
 <script setup lang="ts">
 import { useCounterStore } from "@/stores/index.ts";
 import { storeToRefs } from "pinia";
-import router from "../router";
+import router from "../../router";
 const counter = useCounterStore();
 let { color } = storeToRefs(counter);
 
