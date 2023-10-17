@@ -1,13 +1,3 @@
-<!--
- * @Author: Chai chai 2787922490@qq.com
- * @Date: 2023-10-15 15:57:04
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 23:25:56
- * @FilePath: \chaichaiBlog\src\views\welcome.vue
- * @Description: 
- * 
- * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
--->
 <template>
   <div :style="{ color: color }" class="alert-box">
     <div class="alert-text">为了您的浏览体验，是否需要为您开启背景音乐</div>
@@ -41,8 +31,6 @@ let { color, isPlay } = storeToRefs(counter)
  * @return {*}
  */
 const playRedio = (status: boolean) => {
-  console.log(2)
-  
   isPlay.value = status
   router.push("/home")
 }
