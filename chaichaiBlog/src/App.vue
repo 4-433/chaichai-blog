@@ -133,6 +133,9 @@ fitRem(document, window)
   border: 2px solid;
   overflow-y: auto;
   overflow-x: hidden;
+<<<<<<< HEAD
+>>>>>>> 1ffa065 (canvas鼠标)
+=======
 >>>>>>> 1ffa065 (canvas鼠标)
 }
 
