@@ -127,16 +127,9 @@ fitRem(document, window)
   right: 20px;
   left: 20px;
   bottom: 20px;
-<<<<<<< HEAD
   border: 2px solid var(--base-color);
-=======
-  border: 2px solid;
   overflow-y: auto;
   overflow-x: hidden;
-<<<<<<< HEAD
->>>>>>> 1ffa065 (canvas鼠标)
-=======
->>>>>>> 1ffa065 (canvas鼠标)
 }
 
 .border-box::-webkit-scrollbar {
