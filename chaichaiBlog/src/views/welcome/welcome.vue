@@ -1,13 +1,4 @@
-<!--
- * @Author: Chai chai 2787922490@qq.com
- * @Date: 2023-10-15 15:57:04
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-16 21:59:52
- * @FilePath: \chaichaiBlog\src\views\welcome.vue
- * @Description: 
- * 
- * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
--->
+
 <template>
   <div class="alert-box">
     <div class="alert-text">为了您的浏览体验，是否需要为您开启背景音乐</div>
@@ -19,21 +10,21 @@
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from "@/stores/index";
-import { storeToRefs } from "pinia";
-import router from "../router";
+import { useCounterStore } from "@/stores/index"
+import { storeToRefs } from "pinia"
+import router from "@/router"
 
-const counter = useCounterStore();
-let { isPlay } = storeToRefs(counter);
+const counter = useCounterStore()
+let { isPlay } = storeToRefs(counter)
 
 /**
  * @description: 开始摇头
  * @return {*}
  */
-const playRedio = async (status: boolean) => {
-  isPlay.value = status;
-  router.push("/home");
-};
+const playRedio = (status: boolean) => {
+  isPlay.value = status
+  router.push("/home")
+}
 </script>
 
 
