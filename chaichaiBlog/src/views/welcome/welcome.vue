@@ -1,4 +1,3 @@
-
 <template>
   <div class="alert-box">
     <div class="alert-text">为了您的浏览体验，是否需要为您开启背景音乐</div>
