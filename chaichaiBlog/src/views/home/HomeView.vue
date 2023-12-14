@@ -2,8 +2,8 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-16 22:39:45
- * @FilePath: \chaichaiBlog\src\views\HomeView.vue
+ * @LastEditTime: 2023-12-14 22:24:40
+ * @FilePath: \chaichaiBlog\src\views\home\HomeView.vue
  * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
@@ -827,6 +827,8 @@ dots-item1 {
 .quil-rbox1 {
   width: calc(100% - 300px);
   border-bottom: 2px solid;
+  border-color: var(--base-color);
+  -webkit-text-stroke: 1px var(--base-color);
   font-size: 80px;
   font-weight: normal;
   color: transparent;
@@ -911,10 +913,10 @@ dots-item1 {
 }
 
 .lbox-top {
-  border-color: var(--base-color);
-  -webkit-text-stroke: 1px var(--base-color);
   height: 275px;
   border-bottom: 2px solid;
+  border-color: var(--base-color);
+  -webkit-text-stroke: 1px var(--base-color);
   font-size: 80px;
   font-weight: normal;
   color: transparent;
