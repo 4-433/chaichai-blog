@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-12-16 18:35:23
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-12-17 01:43:36
+ * @LastEditTime: 2023-12-17 01:56:51
  * @FilePath: \chaichaiBlog\src\views\friend\FriendView.vue
  * @Description: 
  * 
@@ -44,7 +44,7 @@ const friendList = [
     name: "三月柳絮四月雨",
     url: "https://lemon-cxh.github.io/images/avatar.jpg",
     text: "我年华虚度，空有一身疲惫",
-    blogUrl: "https://Lemon-cxh.github.io/",
+    blogUrl: "https://chenxiaohui.eu.org/",
     blogHomeUrl:
       "https://chaichaiimage.oss-cn-hangzhou.aliyuncs.com/blogimg/sanyue.png",
   },
@@ -83,7 +83,7 @@ const visiteFriend = () => {
 .friend-right {
   width: 100%;
   height: 100%;
-  border-left: 2px solid var(--basecolor);
+  border-left: 2px solid var(--base-color);
   margin-left: 20px;
   padding-left: 20px;
   .img-box {
