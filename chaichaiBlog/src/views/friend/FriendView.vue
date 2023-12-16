@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-12-16 18:35:23
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-12-17 01:15:44
+ * @LastEditTime: 2023-12-17 01:43:36
  * @FilePath: \chaichaiBlog\src\views\friend\FriendView.vue
  * @Description: 
  * 
@@ -14,9 +14,10 @@
       <chai-card :friendList="friendList" @checkUrl="checkUrl"></chai-card>
     </div>
     <div class="friend-right">
-      <div class="img-box">
-        <img :src="showUrl" alt="" style="width: 100%" />
-      </div>
+      <!-- <div class="img-box"> -->
+      <!-- <img :src="showUrl" alt="" style="width: 100%" /> -->
+      <iframe class="img-box" :src="showBlog" frameborder="0"></iframe>
+      <!-- </div> -->
       <div class="visit-button">
         <chai-button @click="visiteFriend">拜访他们！</chai-button>
       </div>
@@ -43,9 +44,17 @@ const friendList = [
     name: "三月柳絮四月雨",
     url: "https://lemon-cxh.github.io/images/avatar.jpg",
     text: "我年华虚度，空有一身疲惫",
-    blogUrl: "https://Lemon-cxh.github.io",
+    blogUrl: "https://Lemon-cxh.github.io/",
     blogHomeUrl:
       "https://chaichaiimage.oss-cn-hangzhou.aliyuncs.com/blogimg/sanyue.png",
+  },
+  {
+    name: "百梦",
+    url: "https://chaichaiimage.oss-cn-hangzhou.aliyuncs.com/blogimg/mari.jpeg",
+    text: "A Front-end web developer",
+    blogUrl: "https://marrydream.top/",
+    blogHomeUrl:
+      "https://chaichaiimage.oss-cn-hangzhou.aliyuncs.com/blogimg/baimeng.png",
   },
 ];
 const showUrl = ref("");
@@ -74,11 +83,12 @@ const visiteFriend = () => {
 .friend-right {
   width: 100%;
   height: 100%;
-  border-left: 2px solid var(--base-color);
+  border-left: 2px solid var(--basecolor);
   margin-left: 20px;
   padding-left: 20px;
   .img-box {
     width: 100%;
+    height: calc(100% - 90px);
     border: 2px solid var(--base-color);
   }
   .visit-button {
