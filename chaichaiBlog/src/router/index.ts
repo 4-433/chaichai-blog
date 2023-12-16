@@ -2,9 +2,9 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-10-15 18:33:02
+ * @LastEditTime: 2023-12-16 18:35:06
  * @FilePath: \chaichaiBlog\src\router\index.ts
- * @Description: 
+ * @Description:
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
  */
@@ -27,6 +27,11 @@ const router = createRouter({
       path: '/home',
       name: 'homepage',
       component: () => import('../views/home/HomeView.vue')
+    },
+    {
+      path: '/friend',
+      name: 'friend',
+      component: () => import('../views/friend/FriendView.vue')
     }
   ]
 })

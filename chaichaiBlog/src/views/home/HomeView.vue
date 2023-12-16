@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-12-14 22:24:40
+ * @LastEditTime: 2023-12-16 18:55:56
  * @FilePath: \chaichaiBlog\src\views\home\HomeView.vue
  * @Description: 
  * 
@@ -26,7 +26,9 @@
           <div class="inner"></div>
         </div>
       </div>
-      <div class="title-lbox" @click="goTest">Profile</div>
+      <div class="title-lbox" @click="goTest">
+        <div class="show-title">Profile</div>
+      </div>
       <div class="title-ebox" :style="{ 'border-color': color, color: color }">
         Works
         <div class="dots">
@@ -88,7 +90,11 @@
           'border-color': color,
           backgroundImage: `radial-gradient(${color} 40%, transparent 0)`,
         }"
-      ></div>
+      >
+        <div class="link-box">
+          <div class="link-item" @click="goFriend">friend</div>
+        </div>
+      </div>
     </div>
     <div class="quil-box">
       <div class="year-box">
@@ -374,6 +380,12 @@ let { color } = storeToRefs(counter);
 const goTest = () => {
   router.push("componentsTest");
 };
+
+const goFriend = () => {
+  console.log(1111);
+
+  router.push("friend");
+};
 </script>
 
 <style scoped lang="less">
@@ -446,7 +458,6 @@ const goTest = () => {
   /* flex: 48; */
   border-bottom: 2px solid;
   border-right: 2px solid;
-  font-weight: 700;
   padding-top: 20px;
   padding-left: 20px;
   text-align: left;
@@ -454,6 +465,24 @@ const goTest = () => {
     transform 0.6s cubic-bezier(1, 0, 0, 1),
     -webkit-transform 0.6s cubic-bezier(1, 0, 0, 1);
   pointer-events: none;
+}
+
+.show-title {
+  font-weight: 700;
+}
+
+.link-box {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 35px;
+  margin-left: 60px;
+}
+
+.link-item {
+  font-size: 20px;
+  border-left: 2px solid var(--base-color);
+  border-right: 2px solid var(--base-color);
+  padding: 0 10px;
 }
 
 .dots-item {
