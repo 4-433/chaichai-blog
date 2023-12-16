@@ -1,3 +1,13 @@
+<!--
+ * @Author: Chai chai 2787922490@qq.com
+ * @Date: 2023-10-15 16:20:22
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-12-16 23:43:19
+ * @FilePath: \chaichaiBlog\src\components\them\them.vue
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
+-->
 
 <template>
   <div class="title-text">wellcome to chaichai.top</div>

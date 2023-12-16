@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2023-05-22 20:51:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-12-16 18:55:56
+ * @LastEditTime: 2023-12-17 00:16:38
  * @FilePath: \chaichaiBlog\src\views\home\HomeView.vue
  * @Description: 
  * 
@@ -175,13 +175,7 @@
           <div>view project</div>
           <div class="split-point1" :style="{ color: color }">→</div>
         </div>
-        <div
-          class="split-Lbox1"
-          :style="{
-            'border-color': color,
-            backgroundImage: `radial-gradient(${color} 40%, transparent 0)`,
-          }"
-        ></div>
+        <div class="split-Lbox1"></div>
       </div>
     </div>
     <div class="quil-box">
@@ -205,14 +199,7 @@
         <div class="quil-rbox">私は！可愛いです！</div>
       </div>
       <div class="quil-split">
-        <div
-          class="split-Lbox"
-          :style="{
-            'border-color': color,
-            backgroundImage: `linear-gradient(-45deg, ${color} 25%, transparent 0, transparent 50%, ${color} 0, ${color} 75%, transparent 0)`,
-            backgroundSize: '3px 3px',
-          }"
-        ></div>
+        <div class="split-Lbox" :style="{}"></div>
         <div class="split-Rbox" :style="{ color: color }">
           <div>view project</div>
           <div class="split-point" :style="{ color: color }">→</div>
@@ -810,8 +797,19 @@ dots-item1 {
 
 .split-Lbox {
   width: calc(100% - 200px);
-  border-bottom: 2px solid;
-  border-right: 2px solid;
+  border-bottom: 2px solid var(--base-color);
+  border-right: 2px solid var(--base-color);
+  border-color: var(--base-color);
+  background-image: linear-gradient(
+    -45deg,
+    var(--base-color) 25%,
+    transparent 0,
+    transparent 50%,
+    var(--base-color) 0,
+    var(--base-color) 75%,
+    transparent 0
+  );
+  // background-size: "3px 3px";
 }
 
 .split-Rbox {
@@ -901,6 +899,8 @@ dots-item1 {
   border-bottom: 2px solid;
   border-left: 2px solid;
   background-size: 3px 3px;
+  border-color: var(--base-color);
+  background-image: radial-gradient(var(--base-color) 40%, transparent 0);
 }
 
 .split-Rbox1 {
