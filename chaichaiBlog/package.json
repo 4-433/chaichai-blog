@@ -10,7 +10,8 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "build:chai": "vite build && scp -r ./dist root@47.108.166.108:/home/docker/nginx/project"
+    "build:chai": "vite build && scp -r ./dist root@47.108.166.108:/home/docker/nginx/project",
+    "build:marry": "vite build && scp -r ./dist root@118.25.27.202:/opt/nginx/html/blog_chaichai"
   },
   "dependencies": {
     "globalthis": "^1.0.3",
